@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yuan Shan — M.S. in Statistical Science at Duke University. Research interests in LLM, Causal Machine Learning, and Statistical Modeling." />
+  <meta name="author" content="Yuan Shan" />
+  <meta property="og:title" content="Yuan Shan — Personal Website" />
+  <meta property="og:description" content="M.S. in Statistical Science @ Duke University. LLM · Causal ML · Statistical Modeling." />
+  <meta property="og:type" content="website" />
+
+  <title>Yuan Shan · Personal Website</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>Y</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#top" class="nav-brand">
+        <span class="brand-mark">Y</span>
+        <span class="brand-name">Yuan&nbsp;Shan</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button id="menu-toggle" class="icon-btn menu-btn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+
+        <div class="hero-text">
+          <p class="eyebrow reveal">
+            <span class="status-dot" aria-hidden="true"></span>
+            Open to opportunities
+          </p>
+          <h1 class="hero-title reveal">
+            <span class="title-line">Hi, I'm</span>
+            <span class="title-name"><em>Yuan&nbsp;Shan.</em></span>
+          </h1>
+          <p class="hero-tagline reveal">
+            M.S. in Statistical Science <span class="dot">·</span> Duke University.
+            Working at the intersection of
+            <span class="hl">LLM</span>,
+            <span class="hl">Causal&nbsp;ML</span>, and
+            <span class="hl">Statistical&nbsp;Modeling</span>.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a class="btn btn-primary" href="#research">
+              View research
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#projects">Browse projects</a>
+          </div>
+
+          <ul class="hero-socials reveal" aria-label="Social links">
+            <li>
+              <a href="https://github.com/cedricshan" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.86 3.16 8.99 7.54 10.45.55.1.75-.24.75-.53v-2.06c-3.07.67-3.71-1.31-3.71-1.31-.5-1.27-1.22-1.61-1.22-1.61-1-.69.08-.68.08-.68 1.1.08 1.69 1.13 1.69 1.13.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.71-1.49-2.45-.28-5.03-1.22-5.03-5.45 0-1.21.43-2.2 1.13-2.97-.11-.28-.49-1.41.11-2.94 0 0 .92-.29 3.02 1.13.88-.24 1.83-.36 2.77-.37.94.01 1.89.13 2.77.37 2.1-1.42 3.02-1.13 3.02-1.13.6 1.53.22 2.66.11 2.94.7.77 1.13 1.76 1.13 2.97 0 4.24-2.59 5.16-5.05 5.44.4.34.76 1.02.76 2.06v3.05c0 .29.2.64.76.53 4.37-1.46 7.53-5.59 7.53-10.45C23.03 5.26 18.27.5 12 .5z"/></svg>
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:ys328@duke.edu" aria-label="Email">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                <span>ys328@duke.edu</span>
+              </a>
+            </li>
+            <li>
+              <a href="YuanSHAN-resume-042126.pdf" target="_blank" rel="noopener" aria-label="Resume">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+                <span>Résumé</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-portrait reveal" aria-hidden="false">
+          <div class="portrait-frame" data-tilt>
+            <div class="portrait-offset"></div>
+            <div class="portrait-image">
+              <img src="profile_fig/Yuan_linkedin.PNG" alt="Portrait of Yuan Shan" loading="eager" decoding="async" />
+              <div class="portrait-shine" aria-hidden="true"></div>
+            </div>
+            <div class="portrait-corners" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="portrait-meta">
+              <span class="pm-row"><span class="pm-key">name</span><span class="pm-val">Yuan Shan / 单远</span></span>
+              <span class="pm-row"><span class="pm-key">role</span><span class="pm-val">M.S. Statistical Science · Duke</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#about" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE TICKER ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Large&nbsp;Language&nbsp;Models</span><span class="m-sep">✦</span>
+        <span>Causal&nbsp;Machine&nbsp;Learning</span><span class="m-sep">✦</span>
+        <span>Statistical&nbsp;Modeling</span><span class="m-sep">✦</span>
+        <span>RLHF&nbsp;·&nbsp;GRPO</span><span class="m-sep">✦</span>
+        <span>Design&nbsp;of&nbsp;Experiments</span><span class="m-sep">✦</span>
+        <span>vLLM</span><span class="m-sep">✦</span>
+        <span>ICASSP&nbsp;2026</span><span class="m-sep">✦</span>
+        <span>Duke&nbsp;Statistical&nbsp;Science</span><span class="m-sep">✦</span>
+        <!-- duplicate for seamless loop -->
+        <span>Large&nbsp;Language&nbsp;Models</span><span class="m-sep">✦</span>
+        <span>Causal&nbsp;Machine&nbsp;Learning</span><span class="m-sep">✦</span>
+        <span>Statistical&nbsp;Modeling</span><span class="m-sep">✦</span>
+        <span>RLHF&nbsp;·&nbsp;GRPO</span><span class="m-sep">✦</span>
+        <span>Design&nbsp;of&nbsp;Experiments</span><span class="m-sep">✦</span>
+        <span>vLLM</span><span class="m-sep">✦</span>
+        <span>ICASSP&nbsp;2026</span><span class="m-sep">✦</span>
+        <span>Duke&nbsp;Statistical&nbsp;Science</span><span class="m-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-num">01</span>
+          <h2 class="section-title">About</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="lead">
+              <em>A short bio is on its way.</em>
+            </p>
+            <p class="muted">
+              This space is intentionally left mostly blank — I'm still drafting the long-form
+              version of my story. In the meantime, the sections below give a fairly complete
+              picture of what I've been up to: my research, my code, and where I've worked.
+            </p>
+          </div>
+
+          <aside class="about-card reveal">
+            <h3>Quick Facts</h3>
+            <dl class="facts">
+              <div><dt>Currently</dt><dd>M.S. Statistical Science, Duke</dd></div>
+              <div><dt>Focus</dt><dd>LLM · Causal ML · DOE</dd></div>
+              <div><dt>Toolbox</dt><dd>Python · PyTorch · vLLM · R · SQL</dd></div>
+              <div><dt>Languages</dt><dd>English · 中文</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH / PUBLICATIONS / WORKING PAPER ============ -->
+    <section id="research" class="section section-alt">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-num">02</span>
+          <h2 class="section-title">Research</h2>
+          <p class="section-sub">Publications and ongoing work.</p>
+        </header>
+
+        <h3 class="subgroup-title reveal">Publications</h3>
+
+        <article class="paper-card reveal">
+          <div class="paper-badge">
+            <span class="badge badge-accent">Accepted · ICASSP 2026</span>
+            <span class="badge">Conference Paper</span>
+          </div>
+
+          <h3 class="paper-title">
+            MEOW: A Metadata-Driven, End-to-End LLM Framework for Academic Survey Outline Generation
+          </h3>
+
+          <p class="paper-venue">
+            IEEE International Conference on Acoustics, Speech, and Signal Processing
+            (<strong>ICASSP&nbsp;2026</strong>)
+          </p>
+
+          <p class="paper-abstract">
+            We propose <strong>MEOW</strong>, the first metadata-driven, end-to-end LLM framework
+            for academic survey outline generation. Our pipeline combines supervised fine-tuning
+            (SFT) with reinforcement learning (GRPO) under the RLHF paradigm, leveraging
+            Chain-of-Thought annotations to guide structured taxonomy reasoning. We curate
+            ~20k+ surveys from arXiv, bioRxiv, and medRxiv and design multi-dimensional metrics
+            (structure, content, pragmatics) for outline evaluation. Optimizing Qwen3-8B (full
+            &amp; LoRA) with reward functions targeting structural distance and format compliance,
+            MEOW achieves <strong>state-of-the-art performance</strong>, surpassing baselines
+            such as SurveyX and outperforming strong LLMs (e.g., GPT-5 Nano, DeepSeek-R1) on
+            our benchmark.
+          </p>
+
+          <ul class="chip-row" aria-label="Keywords">
+            <li class="chip">LLM</li>
+            <li class="chip">SFT + GRPO (RLHF)</li>
+            <li class="chip">Qwen3-8B</li>
+            <li class="chip">vLLM</li>
+            <li class="chip">Survey Generation</li>
+          </ul>
+
+          <div class="paper-actions">
+            <a class="btn btn-primary btn-sm" href="https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark" target="_blank" rel="noopener">
+              Code &amp; Benchmark
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-sm" href="#contact">Request preprint</a>
+          </div>
+        </article>
+
+        <h3 class="subgroup-title reveal" style="margin-top: 3.5rem;">Working Papers</h3>
+
+        <article class="paper-card paper-card-placeholder reveal">
+          <div class="paper-badge">
+            <span class="badge badge-soft">In Progress</span>
+            <span class="badge">Working Paper</span>
+          </div>
+
+          <h3 class="paper-title">
+            Self-Evolving LLM Agent <span class="muted-inline">— title forthcoming</span>
+          </h3>
+
+          <p class="paper-venue muted">Currently being drafted.</p>
+
+          <p class="paper-abstract muted">
+            A research project on <strong>self-evolving LLM agents</strong>. Details, abstract,
+            and a preprint will be added here once the manuscript is ready.
+            <em>Stay tuned.</em>
+          </p>
+
+          <ul class="chip-row" aria-label="Keywords">
+            <li class="chip chip-soft">LLM Agent</li>
+            <li class="chip chip-soft">Self-Evolution</li>
+            <li class="chip chip-soft">Coming Soon</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-num">03</span>
+          <h2 class="section-title">Projects</h2>
+          <p class="section-sub">A selection of recent work — most from the last year.</p>
+        </header>
+
+        <div class="filter-bar reveal" role="tablist" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="llm">LLM</button>
+          <button class="filter" data-filter="causal">Causal ML</button>
+          <button class="filter" data-filter="stats">Statistics</button>
+          <button class="filter" data-filter="optim">Optimization</button>
+          <button class="filter" data-filter="viz">Visualization</button>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- 1: music-chat-recommender -->
+          <article class="project-card reveal" data-tags="llm">
+            <div class="project-top">
+              <span class="project-date">Apr 2026</span>
+              <span class="project-pill pill-llm">LLM</span>
+            </div>
+            <h3 class="project-title">Music Chat Recommender</h3>
+            <p class="project-desc">
+              Multi-turn LLM chatbot for personalized music recommendations.
+              Built with Gradio + <strong>Groq Llama&nbsp;3.3&nbsp;70B</strong>, integrating the
+              iTunes Search and YouTube Data APIs. Live demo deployed on Hugging Face Spaces.
+            </p>
+            <ul class="tag-row">
+              <li>Python</li><li>Gradio</li><li>Llama 3.3</li><li>Groq</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/music-chat-recommender" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 2: pa-fmd-hte -->
+          <article class="project-card reveal" data-tags="causal stats">
+            <div class="project-top">
+              <span class="project-date">Apr 2026</span>
+              <span class="project-pill pill-causal">Causal ML</span>
+            </div>
+            <h3 class="project-title">PA &amp; Mental Distress: Age-Dependent Heterogeneity</h3>
+            <p class="project-desc">
+              Causal machine learning analysis of physical activity's effect on mental
+              distress across <strong>1.9&nbsp;million U.S. adults</strong> (BRFSS 2015–2024),
+              uncovering age-dependent treatment heterogeneity.
+            </p>
+            <ul class="tag-row">
+              <li>Causal Forests</li><li>BRFSS</li><li>Heterogeneous TE</li><li>Python</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/pa-fmd-hte" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 3: Optimizing Turbine Blade -->
+          <article class="project-card reveal" data-tags="optim stats">
+            <div class="project-top">
+              <span class="project-date">Apr 2026</span>
+              <span class="project-pill pill-optim">Optimization</span>
+            </div>
+            <h3 class="project-title">Optimizing Turbine Blade Design</h3>
+            <p class="project-desc">
+              Design-of-experiments and surrogate-model optimization for turbine blade
+              geometry, balancing aerodynamic efficiency against manufacturing constraints.
+            </p>
+            <ul class="tag-row">
+              <li>DOE</li><li>Surrogate Models</li><li>Python</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/Optimizing-Turbine-Blade-Design" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 4: Paper-Helicopter-DOE -->
+          <article class="project-card reveal" data-tags="optim stats">
+            <div class="project-top">
+              <span class="project-date">Apr 2026</span>
+              <span class="project-pill pill-optim">DOE</span>
+            </div>
+            <h3 class="project-title">Paper Helicopter — Sequential DOE</h3>
+            <p class="project-desc">
+              STA&nbsp;643 project: end-to-end design optimization via fractional factorial
+              screening, confirmation runs, RSM optimization, and validation experiments.
+            </p>
+            <ul class="tag-row">
+              <li>Fractional Factorial</li><li>RSM</li><li>R / Python</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/Paper-Helicopter-DOE" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 5: Bradley-Terry EPL -->
+          <article class="project-card reveal" data-tags="stats">
+            <div class="project-top">
+              <span class="project-date">Mar 2026</span>
+              <span class="project-pill pill-stats">Statistics</span>
+            </div>
+            <h3 class="project-title">Bradley–Terry Analysis · Premier League</h3>
+            <p class="project-desc">
+              Bradley–Terry modeling of English Premier League seasons to estimate
+              latent team strengths and quantify home-field advantage over time.
+            </p>
+            <ul class="tag-row">
+              <li>Bradley–Terry</li><li>Jupyter</li><li>Sports Analytics</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 6: HIV Self-Testing -->
+          <article class="project-card reveal" data-tags="stats causal">
+            <div class="project-top">
+              <span class="project-date">Jan 2026</span>
+              <span class="project-pill pill-stats">Reproducibility</span>
+            </div>
+            <h3 class="project-title">HIV Self-Testing Study · Reproduction</h3>
+            <p class="project-desc">
+              A careful reproduction of a published HIV self-testing study, validating
+              statistical methodology, effect estimates, and robustness checks.
+            </p>
+            <ul class="tag-row">
+              <li>Reproducibility</li><li>R</li><li>Public Health</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/HIV-Self-Testing-Study-Reproduce" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 7: Survey Outline Benchmark -->
+          <article class="project-card reveal" data-tags="llm">
+            <div class="project-top">
+              <span class="project-date">Sep 2025</span>
+              <span class="project-pill pill-llm">LLM</span>
+            </div>
+            <h3 class="project-title">Survey Outline Evaluation Benchmark</h3>
+            <p class="project-desc">
+              End-to-end pipeline for generating &amp; evaluating academic survey outlines
+              with LLMs — multi-dimensional metrics, statistical analysis, and a public
+              benchmark. Companion repo to the ICASSP&nbsp;2026 paper.
+            </p>
+            <ul class="tag-row">
+              <li>Benchmark</li><li>Evaluation</li><li>Python</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+
+          <!-- 8: Football Transfer Viz -->
+          <article class="project-card reveal" data-tags="viz">
+            <div class="project-top">
+              <span class="project-date">2023 · 2024</span>
+              <span class="project-pill pill-viz">Visualization</span>
+            </div>
+            <h3 class="project-title">Football Transfer Market Visualization</h3>
+            <p class="project-desc">
+              Team-led D3.js dashboard analyzing the evolution of the global football
+              transfer market. <strong>Live demo</strong> available — interactive UI design
+              with Python data pipeline.
+            </p>
+            <ul class="tag-row">
+              <li>D3.js</li><li>JavaScript</li><li>Python</li>
+            </ul>
+            <div class="project-actions">
+              <a href="https://transfer-market-vis.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a>
+              <a href="https://github.com/cedricshan/Football-Transfer-Market-Visualization" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="more-link reveal">
+          <a href="https://github.com/cedricshan?tab=repositories" target="_blank" rel="noopener">
+            See all repositories on GitHub →
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-num">04</span>
+          <h2 class="section-title">Experience</h2>
+          <p class="section-sub">Internships, research, and selected projects.</p>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-time">May 2025 – Oct 2025</div>
+            <div class="t-card">
+              <h3>LLM Algorithm Engineer Intern</h3>
+              <p class="t-org">Wenge Tech</p>
+              <p class="t-note badge-inline">Work accepted at ICASSP 2026</p>
+              <ul>
+                <li>Built <strong>MEOW</strong> — first metadata-driven, end-to-end LLM framework for survey outline generation (SFT + GRPO under RLHF).</li>
+                <li>Designed multi-dimensional evaluation metrics (structure, content, pragmatics); curated ~20k+ surveys from arXiv, bioRxiv, medRxiv.</li>
+                <li>Optimized <strong>Qwen3-8B</strong> (full &amp; LoRA); reward functions on structural distance &amp; format compliance.</li>
+                <li>Used <strong>vLLM</strong> for inference + RL acceleration; SOTA over SurveyX, GPT-5 Nano, DeepSeek-R1 on our benchmark.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-time">Sep 2023 – Oct 2023</div>
+            <div class="t-card">
+              <h3>Team Leader · Football Transfer Market Analysis</h3>
+              <p class="t-org">STATS 401 Final Project · Duke Kunshan</p>
+              <ul>
+                <li>Led a 3-person team end-to-end: data pipeline (Python) → interactive D3.js dashboard.</li>
+                <li>Shipped a public visualization at <a href="https://transfer-market-vis.netlify.app/" target="_blank" rel="noopener">transfer-market-vis.netlify.app</a>.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-time">Jun 2023 – Oct 2023</div>
+            <div class="t-card">
+              <h3>Research Intern</h3>
+              <p class="t-org">Beijing Academy of Artificial Intelligence (BAAI)</p>
+              <ul>
+                <li>Contributed to BAAI's 3D electron-microscopy processing toolchain, focused on neuron segmentation.</li>
+                <li>Worked with PyTorch Connectomics (PyTC) and Local Shape Descriptors (LSD).</li>
+                <li>Tuned segmentation models via Grid Search and Bayesian Optimization.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-time">Jun 2022 – Aug 2022</div>
+            <div class="t-card">
+              <h3>Machine Learning Engineering Intern</h3>
+              <p class="t-org">Tencent · Tencent Video</p>
+              <ul>
+                <li>Owned an end-to-end project to identify <em>potential</em> video categories on Tencent Video.</li>
+                <li>Built XGBoost models to construct quantitative indicators of video potential.</li>
+                <li>Used Spark for distributed pipelines on datasets up to <strong>7.5M records</strong>.</li>
+                <li>Authored two reports informing Tencent Video operations.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-time">Dec 2021 – Jan 2022</div>
+            <div class="t-card">
+              <h3>Technical Intern</h3>
+              <p class="t-org">Beijing 2022 Olympic &amp; Paralympic Winter Games — Organising Committee</p>
+              <ul>
+                <li>Statistical analysis of transportation demands of IOC global technical partners.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section">
+      <div class="container">
+        <header class="section-header reveal">
+          <span class="section-num">05</span>
+          <h2 class="section-title">Education</h2>
+        </header>
+
+        <div class="edu-grid">
+          <article class="edu-card reveal">
+            <div class="edu-head">
+              <h3>Duke University</h3>
+            </div>
+            <p class="edu-degree">M.S. in Statistical Science</p>
+            <p class="edu-degree">B.S. in Interdisciplinary Studies — Data Science</p>
+            <p class="edu-time">Aug 2024 – May 2026 · Jul 2020 – Aug 2024</p>
+          </article>
+
+          <article class="edu-card reveal">
+            <div class="edu-head">
+              <h3>Duke Kunshan University</h3>
+            </div>
+            <p class="edu-degree">B.S. in Data Science</p>
+            <p class="edu-meta">GPA <strong>3.7 / 4.0</strong> · Major GPA <strong>3.8 / 4.0</strong></p>
+            <p class="edu-time">Jul 2020 – Aug 2024</p>
+          </article>
+        </div>
+
+        <div class="honors reveal">
+          <h3 class="honors-title">Honors &amp; Leadership</h3>
+          <ul class="honors-list">
+            <li><span class="h-mark">★</span> Dean's List with Distinction · Duke Kunshan University</li>
+            <li><span class="h-mark">★</span> Finalist Prize · Interdisciplinary Contest in Modeling (MCM/ICM)</li>
+            <li><span class="h-mark">★</span> First Prize · National Olympiad in Informatics in Provinces (NOIP)</li>
+            <li><span class="h-mark">·</span> Outstanding Peer Mentor &amp; Outstanding Peer Tutor · DKU (2022–2024)</li>
+            <li><span class="h-mark">·</span> Volunteer · Duke China-U.S. Summit 2023</li>
+            <li><span class="h-mark">·</span> Student Leader · Kunshan Student Orientation Peers (KSOP)</li>
+            <li><span class="h-mark">·</span> Best Volunteer · 7th China Buyout Fund Annual Conference</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact-block">
+        <header class="section-header reveal">
+          <span class="section-num">06</span>
+          <h2 class="section-title">Get in touch</h2>
+        </header>
+
+        <p class="contact-lead reveal">
+          Always happy to chat about <em>LLM research</em>, <em>causal inference</em>, or
+          <em>fun statistical side-projects</em>. The fastest way to reach me is by email.
+        </p>
+
+        <div class="contact-actions reveal">
+          <a class="btn btn-primary" href="mailto:ys328@duke.edu">
+            Email me
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/cedricshan" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <ul class="contact-meta reveal">
+          <li><strong>Email</strong><a href="mailto:ys328@duke.edu">ys328@duke.edu</a></li>
+          <li><strong>Phone (US)</strong><span>(919) 697-2488</span></li>
+          <li><strong>Phone (CN)</strong><span>+86 159-1080-1104</span></li>
+          <li><strong>GitHub</strong><a href="https://github.com/cedricshan" target="_blank" rel="noopener">@cedricshan</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Yuan Shan. Built with care, hand-coded HTML &amp; CSS.</p>
+      <p class="footer-meta">Last updated <time>April 2026</time></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
