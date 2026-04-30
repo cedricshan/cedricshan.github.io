@@ -1,0 +1,131 @@
+% ============================================================
+%  Yuan Shan — Resume (1 page)
+%  Compile with: tectonic resume.tex
+% ============================================================
+\documentclass[10.5pt,letterpaper]{article}
+
+\usepackage[margin=0.5in,top=0.4in,bottom=0.4in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- palette ----------
+\definecolor{accent}{HTML}{8A3324}
+\definecolor{ink}{HTML}{1C1C21}
+\definecolor{muted}{HTML}{555560}
+\definecolor{soft}{HTML}{8A8A95}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---------- section style ----------
+\titleformat{\section}
+  {\normalsize\bfseries\color{accent}}
+  {}{0pt}{}
+  [\vspace{-5pt}{\color{accent}\rule{\textwidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{6pt}{2pt}
+
+% ---------- list defaults ----------
+\setlist[itemize]{
+  leftmargin=1em,
+  topsep=0pt,
+  parsep=0pt,
+  itemsep=1pt,
+  label=\textcolor{accent}{\textbullet}
+}
+
+% ---------- entry helper ----------
+% \entry{Title}{Subtitle}{Right top}{Right bottom}
+\newcommand{\entry}[4]{%
+  \noindent\textbf{\color{ink}#1}\hfill{\color{soft}\small #3}\\[0pt]%
+  \textit{\color{muted}#2}\hfill\textit{\color{soft}\small #4}%
+  \vspace{1pt}%
+}
+
+% ---------- compact entry: just title with right-aligned date ----------
+\newcommand{\eduentry}[4]{%
+  \noindent\textbf{\color{ink}#1}, {\color{muted}#2}\hfill{\color{soft}\small #3}\\[1pt]%
+  \textit{\color{muted}\small #4}%
+  \vspace{2pt}%
+}
+
+\begin{document}
+
+% ============== HEADER ==============
+\begin{center}
+  {\fontsize{22}{26}\selectfont\bfseries\color{ink} Yuan Shan}\\[2pt]
+  {\small\color{muted} M.S.\ in Statistical Science\, $\cdot$\, Duke University}\\[4pt]
+  {\footnotesize\color{muted}
+    \href{mailto:ys328@duke.edu}{ys328@duke.edu}
+    \;$\cdot$\; (919) 697-2488
+    \;$\cdot$\; \href{https://github.com/cedricshan}{github.com/cedricshan}
+    \;$\cdot$\; \href{https://www.linkedin.com/in/yuanshan20011218/}{linkedin.com/in/yuanshan20011218}
+    \;$\cdot$\; \href{https://cedricshan.github.io}{cedricshan.github.io}
+  }
+\end{center}
+
+% ============== EDUCATION ==============
+\section{EDUCATION}
+
+\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{Durham, NC, USA}\\
+\entry{Duke Kunshan University}{B.S.\ in Data Science (Interdisciplinary Studies)}{Jul 2020 -- Aug 2024}{Kunshan, China}
+
+% ============== EXPERIENCE ==============
+\section{EXPERIENCE}
+
+\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing \,$\cdot$\, {\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
+\begin{itemize}
+  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining SFT with reinforcement learning (\textbf{GRPO}) under RLHF.
+  \item Constructed a public benchmark and multi-dimensional metrics (structure, content, pragmatics); curated $\sim$20k+ surveys from arXiv, bioRxiv, medRxiv with Chain-of-Thought annotations.
+  \item Optimized \textbf{Qwen3-8B} (full and LoRA); designed reward functions on structural distance and format compliance to align with human writing preferences.
+  \item Leveraged \textbf{vLLM} for inference and RL training acceleration, achieving \textbf{state-of-the-art} results over SurveyX, GPT-5 Nano, and DeepSeek-R1 on the benchmark.
+\end{itemize}
+
+\vspace{2pt}
+\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{Tencent Video}{Jun 2022 -- Aug 2022}{}
+\begin{itemize}
+  \item Independently owned an end-to-end ML project to surface high-potential video categories on Tencent Video, from data extraction and cleaning through model design and stakeholder reporting.
+  \item Engineered an \textbf{XGBoost}-based scoring model producing quantitative indicators of video-category potential; tuned via cross-validated hyperparameter search.
+  \item Built scalable pipelines on Tencent's internal task-scheduling platform; used \textbf{Spark} for distributed feature engineering on volumes up to \textbf{7.5M records}.
+  \item Wrote production SQL/Python; authored two reports informing Tencent Video's content-strategy decisions.
+\end{itemize}
+
+% ============== PROJECTS ==============
+\section{SELECTED PROJECTS}
+
+\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,\textbar\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{HuggingFace Space}}{Apr 2026}{}
+\begin{itemize}
+  \item Built a multi-turn LLM chatbot for personalized music recommendations with \textbf{Gradio} + \textbf{Groq Llama 3.3 70B}, integrating iTunes Search and YouTube Data APIs.
+  \item Deployed a public live demo on Hugging Face Spaces; designed conversation state, retrieval, and ranking logic end-to-end.
+\end{itemize}
+
+\vspace{2pt}
+\entry{Bradley--Terry Analysis of the English Premier League}{Sports Analytics \,\textbar\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{Slides}}{Mar 2026}{}
+\begin{itemize}
+  \item Estimated latent team strengths across multiple Premier League seasons via the \textbf{Bradley--Terry} model and quantified home-field advantage over time.
+  \item Implemented model fitting, diagnostics, and visualization in Python/Jupyter; presented findings in a deck for an applied-statistics seminar.
+\end{itemize}
+
+% ============== SKILLS ==============
+\section{SKILLS}
+\noindent
+\textbf{\color{ink}Programming:}\, Python, R, SQL, JavaScript (D3.js), Bash. \quad
+\textbf{\color{ink}ML / LLM:}\, PyTorch, Transformers, vLLM, TRL, LoRA / PEFT, DeepSpeed, XGBoost.\\[1pt]
+\textbf{\color{ink}Data \& Infra:}\, Hadoop, Spark, Bayesian Opt., Causal Forests, DOE. \quad
+\textbf{\color{ink}Languages:}\, English (professional), Mandarin (native).
+
+% ============== HONORS ==============
+\section{HONORS}
+\noindent
+Dean's List with Distinction, Duke Kunshan University \,$\cdot$\, Finalist Prize, Mathematical Contest in Modeling (MCM) \,$\cdot$\, First Prize, National Olympiad in Informatics in Provinces (NOIP)
+
+\end{document}

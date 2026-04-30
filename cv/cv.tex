@@ -1,0 +1,247 @@
+% ============================================================
+%  Yuan Shan — Curriculum Vitae (full, multi-page)
+%  Compile with: tectonic cv.tex
+% ============================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.85in,top=0.8in,bottom=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- palette ----------
+\definecolor{accent}{HTML}{8A3324}
+\definecolor{ink}{HTML}{1C1C21}
+\definecolor{muted}{HTML}{555560}
+\definecolor{soft}{HTML}{8A8A95}
+
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent, pdftitle={Yuan Shan -- CV}, pdfauthor={Yuan Shan}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ---------- page numbers (footer) ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{soft} Yuan Shan \;\textbar\; CV \;\textbar\; Page \thepage\ of \pageref{LastPage}}
+
+% ---------- section style ----------
+\titleformat{\section}
+  {\large\bfseries\color{accent}}
+  {}{0pt}{}
+  [\vspace{-6pt}{\color{accent}\rule{\textwidth}{0.7pt}}]
+\titlespacing*{\section}{0pt}{18pt}{8pt}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{ink}}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+% ---------- list defaults ----------
+\setlist[itemize]{
+  leftmargin=1.2em,
+  topsep=2pt,
+  parsep=0pt,
+  itemsep=2pt,
+  label=\textcolor{accent}{\textbullet}
+}
+
+% ---------- entry helper ----------
+\newcommand{\entry}[4]{%
+  \noindent\textbf{\color{ink}#1}\hfill{\color{soft}\small #3}\\[1pt]%
+  \textit{\color{muted}#2}\hfill\textit{\color{soft}\small #4}%
+  \vspace{2pt}%
+}
+
+\begin{document}
+
+% ============== HEADER ==============
+\begin{center}
+  {\fontsize{30}{34}\selectfont\bfseries\color{ink} Yuan Shan}\\[6pt]
+  {\small\color{muted} Master of Statistical Science Student\, $\cdot$\, Duke University}\\[8pt]
+  {\small\color{muted}
+    \href{mailto:ys328@duke.edu}{ys328@duke.edu}
+    \;\textbar\; (919) 697-2488 (US) / +86 159-1080-1104 (CN) \;\textbar\;
+    \href{https://github.com/cedricshan}{github.com/cedricshan}
+  }\\[2pt]
+  {\small\color{muted}
+    \href{https://www.linkedin.com/in/yuanshan20011218/}{linkedin.com/in/yuanshan20011218}
+    \;\textbar\;
+    \href{https://cedricshan.github.io}{cedricshan.github.io}
+  }
+\end{center}
+
+% ============== EDUCATION ==============
+\section{EDUCATION}
+
+\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{Durham, NC, USA}
+\\[3pt]
+\entry{Duke University}{B.S.\ in Interdisciplinary Studies --- Data Science}{Jul 2020 -- Aug 2024}{Durham, NC, USA}
+\\[3pt]
+\entry{Duke Kunshan University}{B.S.\ in Data Science}{Jul 2020 -- Aug 2024}{Kunshan, China}
+
+% ============== RESEARCH INTERESTS ==============
+\section{RESEARCH INTERESTS}
+\noindent\color{muted}
+Large language models, reinforcement learning (RLHF, GRPO), self-evolving language model agents, statistical modeling, causal machine learning, design of experiments.
+
+% ============== PUBLICATIONS ==============
+\section{PUBLICATIONS}
+
+\noindent
+\textbf{\color{ink}Yuan Shan} et al.
+\textit{``MEOW: A Metadata-Driven, End-to-End LLM Framework for Academic Survey Outline Generation.''}
+\textbf{IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2026.}
+\;\href{https://ieeexplore.ieee.org/document/11462654}{[IEEE Xplore]}\;
+\href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]}
+
+\vspace{2pt}
+{\small\color{muted}\itshape
+The first metadata-driven, end-to-end LLM framework combining SFT and reinforcement learning (GRPO) under RLHF. Achieves SOTA performance over SurveyX, GPT-5 Nano, and DeepSeek-R1 on a curated multi-dimensional benchmark.}
+
+% ============== WORKING PAPERS ==============
+\section{WORKING PAPERS}
+
+\noindent
+\textbf{\color{ink}Self-Evolving LLM Agent.} \textit{In preparation.}\\[2pt]
+{\small\color{muted}\itshape Research project on reinforcement-learning-driven self-evolution for large language model agents.}
+
+% ============== EXPERIENCE ==============
+\section{INDUSTRY \& RESEARCH EXPERIENCE}
+
+\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing, China}{May 2025 -- Oct 2025}{}\\[1pt]
+{\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026}
+\begin{itemize}
+  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) with reinforcement learning (GRPO) under the RLHF paradigm.
+  \item Constructed a public benchmark and multi-dimensional evaluation metrics covering structure, content, and pragmatics for outline-quality assessment.
+  \item Curated and distilled $\sim$20k+ surveys from arXiv, bioRxiv, and medRxiv; built a Chain-of-Thought (CoT) annotation layer to guide structured taxonomy reasoning and improve survey coherence.
+  \item Optimized \textbf{Qwen3-8B} (full and LoRA) end-to-end; designed reward functions on structural distance and format compliance to align generation with human writing preferences.
+  \item Leveraged \textbf{vLLM} to accelerate both inference and RL training, achieving state-of-the-art performance, surpassing baselines such as SurveyX and outperforming strong LLMs (GPT-5 Nano, DeepSeek-R1) on the benchmark.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Lakala Payment \,\textemdash\, Data Engineering Intern}{Beijing, China}{Jul 2024 -- Aug 2024}{}
+\begin{itemize}
+  \item Assisted in the development and maintenance of the company's internal data platform using Hadoop ecosystem tools.
+  \item Designed and developed the internal data platform's data quality monitoring system.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Beijing Academy of Artificial Intelligence (BAAI) \,\textemdash\, Research Intern}{Beijing, China}{Jun 2023 -- Oct 2023}{}
+\begin{itemize}
+  \item Contributed to BAAI's 3D electron-microscopy (EM) processing toolchain, focusing on advanced neuron-segmentation methodologies including PyTorch Connectomics (PyTC) and Local Shape Descriptors (LSD).
+  \item Built reproducible training pipelines for large-volume connectomics data, covering preprocessing, augmentation, and patch-based inference for cubic-micron EM volumes.
+  \item Optimized segmentation models via systematic hyperparameter tuning combining Grid Search and Bayesian Optimization, materially improving segmentation quality on benchmark volumes.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{Tencent Video, Shenzhen, China}{Jun 2022 -- Aug 2022}{}
+\begin{itemize}
+  \item Independently owned an end-to-end ML project to surface high-potential video categories on the Tencent Video platform, from data extraction and cleaning through algorithm design, evaluation, and stakeholder reporting.
+  \item Built scalable data pipelines on Tencent's internal task-scheduling platform, handling dependency resolution across heterogeneous data sources.
+  \item Engineered an XGBoost-based scoring model producing quantitative indicators of video-category potential; tuned the model with cross-validated hyperparameter search.
+  \item Wrote production SQL and Python against large-scale internal data warehouses to extract, join, and transform features at scale.
+  \item Deployed Spark for distributed feature engineering and model scoring, keeping the pipeline tractable on volumes of up to \textbf{7,500,000 records}.
+  \item Synthesized findings into two project reports that informed downstream content-strategy and operational decisions on Tencent Video.
+\end{itemize}
+
+% ============== PROJECTS ==============
+\section{PROJECTS}
+
+\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,\textbar\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{Live Demo} \,\textbar\, \href{https://github.com/cedricshan/music-chat-recommender}{GitHub}}{Apr 2026}{}
+\begin{itemize}
+  \item Built a multi-turn LLM chatbot for personalized music recommendations using Gradio and \textbf{Groq Llama 3.3 70B}, integrating iTunes Search and YouTube Data APIs.
+  \item Deployed a publicly available live demo on Hugging Face Spaces; designed conversation state, retrieval, and ranking logic end-to-end.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Physical Activity \& Mental Distress: Age-Dependent Heterogeneity}{Causal ML on BRFSS 2015--2024 \,\textbar\, \href{https://github.com/cedricshan/pa-fmd-hte}{GitHub}}{Apr 2026}{}
+\begin{itemize}
+  \item Causal machine-learning analysis of physical activity's effect on mental distress across $\sim$1.9 million U.S. adults, uncovering age-dependent treatment heterogeneity.
+  \item Used Causal Forests to estimate heterogeneous treatment effects and validated robustness across BRFSS waves.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Optimizing Turbine Blade Design}{Design of Experiments + Surrogate Models \,\textbar\, \href{https://github.com/cedricshan/Optimizing-Turbine-Blade-Design}{GitHub}}{Apr 2026}{}
+\begin{itemize}
+  \item Design-of-experiments and surrogate-model optimization for turbine blade geometry, balancing aerodynamic efficiency against manufacturing constraints.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Paper Helicopter --- Sequential DOE}{STA 643 \,\textbar\, \href{https://github.com/cedricshan/Paper-Helicopter-DOE}{GitHub}}{Apr 2026}{}
+\begin{itemize}
+  \item End-to-end design optimization via fractional-factorial screening, confirmation runs, response-surface (RSM) optimization, and validation experiments.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Bradley--Terry Analysis of the English Premier League}{Sports Analytics \,\textbar\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{Slides} \,\textbar\, \href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{GitHub}}{Mar 2026}{}
+\begin{itemize}
+  \item Estimated latent team strengths across multiple Premier League seasons via the Bradley--Terry model and quantified the magnitude of home-field advantage over time.
+  \item Implemented model fitting, diagnostic checks, and visualization in Python/Jupyter; presented findings in a deck for an applied-statistics seminar.
+\end{itemize}
+
+\vspace{4pt}
+\entry{HIV Self-Testing Study --- Reproduction}{Reproducibility in Public Health \,\textbar\, \href{https://github.com/cedricshan/HIV-Self-Testing-Study-Reproduce}{GitHub}}{Jan 2026}{}
+\begin{itemize}
+  \item Careful reproduction of a published HIV self-testing study, validating statistical methodology, effect estimates, and robustness checks.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Survey Outline Evaluation Benchmark}{Companion code to ICASSP 2026 \,\textbar\, \href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{GitHub}}{Sep 2025}{}
+\begin{itemize}
+  \item End-to-end pipeline for generating and evaluating academic survey outlines with LLMs --- multi-dimensional metrics, statistical analysis, and a public benchmark.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Football Transfer Market Visualization}{Team Leader (3-person team) \,\textbar\, \href{https://transfer-market-vis.netlify.app/}{Live Demo} \,\textbar\, \href{https://github.com/cedricshan/Football-Transfer-Market-Visualization}{GitHub}}{Sep 2023 -- Oct 2023}{}
+\begin{itemize}
+  \item Led a 3-person STATS 401 team end-to-end: scoped the research questions, defined the data model, and split engineering and design responsibilities.
+  \item Wrote the full Python data-cleaning pipeline; designed the interactive UI and visual encoding from scratch in D3.js, letting users drill down by club, season, and league.
+  \item Shipped a publicly hosted visualization at \href{https://transfer-market-vis.netlify.app/}{transfer-market-vis.netlify.app}.
+\end{itemize}
+
+\vspace{4pt}
+\entry{Internal Data Quality Monitoring System}{Independent project \,\textbar\, \href{https://github.com/cedricshan/Data-Quality-Mnitoring-System}{GitHub}}{Jul 2024}{}
+\begin{itemize}
+  \item Python-based data-quality monitoring system designed for large-scale data environments; uses statistical methods to evaluate data quality and triggers alerts when anomalies are detected.
+\end{itemize}
+
+% ============== HONORS ==============
+\section{HONORS \& AWARDS}
+\begin{itemize}
+  \item Dean's List with Distinction, Duke Kunshan University.
+  \item Finalist Prize, Interdisciplinary Contest in Modeling (MCM/ICM).
+  \item First Prize, National Olympiad in Informatics in Provinces (NOIP).
+  \item Outstanding Peer Mentor and Outstanding Peer Tutor, Duke Kunshan University (2022--2024).
+  \item Best Volunteer, 7th China Buyout Fund Annual Conference, Chinese Museum of Funds.
+\end{itemize}
+
+% ============== LEADERSHIP ==============
+\section{LEADERSHIP \& SERVICE}
+\begin{itemize}
+  \item \textbf{Technical Intern}, Beijing 2022 Olympic \& Paralympic Winter Games --- Organising Committee. \hfill {\small\color{soft} Dec 2021 -- Jan 2022}\\
+  Conducted statistical analysis of the IOC global technical partners' transportation demands during pre-Games operations; compiled briefing materials informing vehicle allocation and route planning.
+  \item \textbf{Volunteer}, Duke China-U.S.\ Summit 2023 Committee. \hfill {\small\color{soft} Jun 2023 -- Jul 2023}
+  \item \textbf{Student Leader}, Kunshan Student Orientation Peers (KSOP) at Duke. \hfill {\small\color{soft} Nov 2022 -- May 2023}
+\end{itemize}
+
+% ============== SKILLS ==============
+\section{TECHNICAL SKILLS}
+
+\noindent
+\textbf{\color{ink}Programming Languages:}\, Python, R, SQL, JavaScript (D3.js), Bash.\\[3pt]
+\textbf{\color{ink}Machine Learning \& LLM:}\, PyTorch, HuggingFace Transformers, vLLM, TRL, LoRA / PEFT, DeepSpeed, XGBoost, scikit-learn.\\[3pt]
+\textbf{\color{ink}Data \& Infrastructure:}\, Hadoop, Spark, Causal Forests, Bayesian Optimization, Design of Experiments, Bradley--Terry models.\\[3pt]
+\textbf{\color{ink}Tools:}\, Git, LaTeX, Gradio, Linux, Jupyter.\\[3pt]
+\textbf{\color{ink}Languages:}\, English (professional working proficiency), Mandarin Chinese (native).
+
+\end{document}

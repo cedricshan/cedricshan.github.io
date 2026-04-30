@@ -6,3 +6,12 @@ node_modules/
 
 # old resume source not used by the site
 YuanSHAN-resume-012226.docx
+
+# LaTeX build artifacts
+cv/*.aux
+cv/*.log
+cv/*.out
+cv/*.toc
+cv/*.fls
+cv/*.fdb_latexmk
+cv/*_preview-*.png
