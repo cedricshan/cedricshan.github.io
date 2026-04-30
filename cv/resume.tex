@@ -60,16 +60,18 @@
   label=\textcolor{accent}{\textbullet}
 }
 
-% ---------- entry helper ----------
+% ---------- entry helper (subtitle line is optional) ----------
 % \entry{Title}{Subtitle}{Right top}{Right bottom}
 \newcommand{\entry}[4]{%
-  \noindent\textbf{\color{ink}#1}\hfill{\color{soft}\small #3}\\[0pt]%
-  {\itshape\color{muted}\small #2}\hfill\textit{\color{soft}\small #4}%
+  \noindent\textbf{\color{ink}#1}\hfill{\color{soft}\small #3}\par%
+  \def\tmp{#2}\ifx\tmp\empty\else%
+    {\itshape\color{muted}\small #2}\hfill\textit{\color{soft}\small #4}\par%
+  \fi%
   \vspace{1pt}%
 }
 
 \begin{document}
-\linespread{0.93}\selectfont
+\linespread{0.95}\selectfont
 
 % ============== HEADER ==============
 \begin{center}
@@ -85,62 +87,64 @@
 % ============== EDUCATION ==============
 \section{EDUCATION}
 
-\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{Durham, NC, USA}\\
-\entry{Duke Kunshan University}{B.S.\ in Data Science (Interdisciplinary Studies in Data Science)}{Jul 2020 -- Aug 2024}{Kunshan, China}
+\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{}
+\entry{Duke Kunshan University}{B.S.\ in Data Science (Interdisciplinary Studies in Data Science)}{Jul 2020 -- Aug 2024}{}
 
 % ============== EXPERIENCE ==============
 \section{EXPERIENCE}
 
-\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing, China \,$\cdot$\, \href{https://ieeexplore.ieee.org/document/11462654}{[Paper]} \,\href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]} \,$\cdot$\, {\color{accent}Accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
+\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{\href{https://ieeexplore.ieee.org/document/11462654}{[Paper]} \,\href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]} \,$\cdot$\, {\color{accent}Accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
 \begin{itemize}
-  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) with GRPO-style reinforcement learning under the RLHF paradigm to produce structurally coherent outlines.
-  \item Constructed a public benchmark and a multi-dimensional evaluation suite covering \textit{structure}, \textit{content}, and \textit{pragmatics}; curated $\sim$20{,}000 surveys from arXiv, bioRxiv, and medRxiv with Chain-of-Thought annotations to guide structured taxonomy reasoning.
-  \item Optimized \textbf{Qwen3-8B} end-to-end (full fine-tuning and LoRA) with custom reward functions on structural distance and format compliance, aligning generated outlines with human writing preferences.
-  \item Leveraged \textbf{vLLM} for inference and RL-training acceleration, achieving state-of-the-art results that surpassed SurveyX and outperformed GPT-5 Nano and DeepSeek-R1 across the benchmark.
+  \item Developed \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) and reinforcement learning (GRPO) within the RLHF paradigm.
+  \item Designed and implemented a benchmark and multi-dimensional evaluation metrics (structure, content, pragmatics) for outline quality assessment; curated and distilled $\sim$20k+ survey datasets from arXiv, bioRxiv, and medRxiv.
+  \item Constructed Chain-of-Thought (CoT) annotations to guide structured reasoning, materially improving logical taxonomy construction and overall coherence of generated survey outlines.
+  \item Optimized \textbf{Qwen3-8B} model (full \& LoRA) with SFT and reinforcement learning; designed reward functions (structural distance \& format compliance) to align generation with human writing preferences.
+  \item Leveraged \textbf{vLLM} to accelerate inference and RL training, achieving state-of-the-art performance, surpassing SurveyX and outperforming strong LLMs (e.g., GPT-5 Nano, DeepSeek-R1) on evaluation benchmarks.
 \end{itemize}
 
 \vspace{1pt}
-\entry{Beijing Academy of Artificial Intelligence (BAAI) \,\textemdash\, Research Intern}{Beijing, China}{Jun 2023 -- Oct 2023}{}
+\entry{Beijing Academy of Artificial Intelligence (BAAI) \,\textemdash\, Research Intern}{}{Jun 2023 -- Oct 2023}{}
 \begin{itemize}
-  \item Contributed to BAAI's open-source 3D electron-microscopy processing toolchain, focusing on advanced neuron-segmentation methodologies including \textbf{PyTorch Connectomics (PyTC)} and \textbf{Local Shape Descriptors (LSD)}.
-  \item Built reproducible training pipelines for large-volume connectomics data, covering preprocessing, augmentation, and patch-based inference for cubic-micron electron-microscopy volumes.
-  \item Optimized segmentation models via systematic hyperparameter tuning combining \textbf{Grid Search} and \textbf{Bayesian Optimization}, materially improving downstream segmentation quality on internal benchmark volumes.
+  \item Contributed to the development of the 3D electron microscopy processing toolchain at BAAI, with a focus on advanced neuron segmentation methodologies such as \textbf{PyTorch Connectomics (PyTC)} and \textbf{Local Shape Descriptors (LSD)}.
+  \item Optimized neuron segmentation models via hyperparameter tuning using \textbf{Grid Search} and \textbf{Bayesian Optimization}.
 \end{itemize}
 
 \vspace{1pt}
-\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{Tencent Video, Shenzhen, China}{Jun 2022 -- Aug 2022}{}
+\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{}{Jun 2022 -- Aug 2022}{}
 \begin{itemize}
-  \item Independently owned an end-to-end ML project to surface high-potential video categories on the Tencent Video platform, running the full pipeline from data extraction and cleaning through algorithm design and evaluation to final reporting for product stakeholders.
-  \item Engineered an \textbf{XGBoost}-based scoring model that produced quantitative indicators of video-category potential, surfacing under-served verticals with strong growth signal; tuned with cross-validated hyperparameter search.
-  \item Built scalable pipelines on Tencent's internal task-scheduling platform and deployed \textbf{Spark} for distributed feature engineering, keeping the workflow tractable on volumes of up to \textbf{7{,}500{,}000 records}.
-  \item Wrote production SQL and Python against internal data warehouses; synthesized findings into two reports that informed downstream content-strategy and operational decisions on Tencent Video.
+  \item Independently undertook a project to identify potential video categories on the Tencent Video platform, managing the entire process from data extraction, cleaning, and algorithm implementation through to the reporting of results.
+  \item Established pipelines for task scheduling and dependency management on the internal task-scheduling platform.
+  \item Developed machine learning models based on \textbf{XGBoost} to construct quantitative indicators for video potential; used SQL and Python for data retrieval and ML model implementation.
+  \item Employed \textbf{Spark} for distributed computing to enhance pipeline efficiency with data volumes up to \textbf{7,500,000 records}.
+  \item Authored two project reports providing insights for Tencent Video operations.
 \end{itemize}
 
 % ============== PROJECTS ==============
 \section{SELECTED PROJECTS}
 
-\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,$\cdot$\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{[Live Demo]} \,\href{https://github.com/cedricshan/music-chat-recommender}{[GitHub]}}{Apr 2026}{}
+\entry{Music Chat Recommender}{\href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{[Live Demo]} \,\href{https://github.com/cedricshan/music-chat-recommender}{[GitHub]}}{Apr 2026}{}
 \begin{itemize}
-  \item Built a multi-turn LLM chatbot for personalized music recommendations using \textbf{Gradio} and \textbf{Groq Llama 3.3 70B}, integrating the iTunes Search and YouTube Data APIs to surface metadata and playable links directly inside each conversation turn.
-  \item Designed conversation state, retrieval, and ranking logic end-to-end; deployed a publicly accessible live demo on Hugging Face Spaces that lets visitors chat with the assistant in the browser.
+  \item Built an interactive music-recommendation chatbot with \textbf{Gradio} as the front-end and \textbf{Groq Llama 3.3 70B} as the LLM backend, with multi-turn conversation memory so the assistant tracks user preferences across turns.
+  \item Connected the chatbot to the \textbf{iTunes Search API} for track and artist metadata and the \textbf{YouTube Data API} for playable video links, returning recommended songs together with album art and direct YouTube embeds inside the chat.
 \end{itemize}
 
 \vspace{1pt}
-\entry{Bradley--Terry Analysis of the English Premier League}{Sports analytics \,$\cdot$\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{[Slides]} \,\href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{[GitHub]}}{Mar 2026}{}
+\entry{Bradley--Terry Analysis of the English Premier League}{\href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{[Slides]} \,\href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{[GitHub]}}{Mar 2026}{}
 \begin{itemize}
-  \item Estimated latent team strengths across multiple Premier League seasons using the \textbf{Bradley--Terry} paired-comparison model and quantified the magnitude and trend of home-field advantage over time.
-  \item Implemented model fitting, diagnostic checks, and visualization in Python and Jupyter; presented the resulting findings in a deck delivered at an applied-statistics seminar.
+  \item Fit \textbf{Bradley--Terry} paired-comparison models to English Premier League match results across multiple seasons, producing season-by-season strength rankings for each participating club.
+  \item Augmented the base model with a home-advantage parameter; estimated its magnitude, tracked it over time, and presented the full analysis in a Google Slides deck.
 \end{itemize}
 
 \vspace{1pt}
-\entry{Football Transfer Market Visualization \,\textemdash\, Team Leader}{3-person STATS 401 team \,$\cdot$\, \href{https://transfer-market-vis.netlify.app/}{[Live Demo]} \,\href{https://github.com/cedricshan/Football-Transfer-Market-Visualization}{[GitHub]}}{Sep 2023 -- Oct 2023}{}
+\entry{Football Transfer Market Visualization}{\href{https://transfer-market-vis.netlify.app/}{[Live Demo]} \,\href{https://github.com/cedricshan/Football-Transfer-Market-Visualization}{[GitHub]}}{Oct 2023}{}
 \begin{itemize}
-  \item Led a 3-person team end-to-end as Team Leader: scoped the research questions, wrote the full Python data-cleaning pipeline, and designed an interactive \textbf{D3.js} dashboard from scratch that lets users drill down across clubs, seasons, and leagues.
+  \item Aimed to provide insights into the evolution trends and key influencing factors of the global football transfer market via Python-based data cleaning and processing of multi-season transfer data.
+  \item Built interactive data visualizations and UI design in \textbf{D3.js}; final dashboard deployed publicly online.
 \end{itemize}
 
 % ============== HONORS ==============
 \section{HONORS}
 \noindent\footnotesize
-Dean's List with Distinction (DKU) \,$\cdot$\, Finalist Prize, MCM/ICM \,$\cdot$\, First Prize, National Olympiad in Informatics in Provinces (NOIP)
+Dean's List with Distinction (DKU) \,$\cdot$\, Finalist Prize, MCM/ICM \,$\cdot$\, First Prize, National Olympiad in Informatics (NOI) in Provinces
 
 \end{document}
