@@ -131,8 +131,9 @@
 \vspace{1pt}
 \entry{Bradley--Terry Analysis of the English Premier League}{\href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{[Slides]} \,\href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{[GitHub]}}{Mar 2026}{}
 \begin{itemize}
-  \item Fit \textbf{Bradley--Terry} paired-comparison models to English Premier League match results across multiple seasons, producing season-by-season strength rankings for each participating club.
-  \item Augmented the base model with a home-advantage parameter; estimated its magnitude, tracked it over time, and presented the full analysis in a Google Slides deck.
+  \item Fit a \textbf{Bradley--Terry} paired-comparison model --- reformulated as logistic regression for MLE inference --- to \textbf{7{,}860} English Premier League matches across 21 seasons (2005/06--2025/26) and 44 clubs.
+  \item Extended the base model with the \textbf{Davidson} formulation for draws (24\% of outcomes) plus season-specific and team-specific home-advantage intercepts, validated via Wald and likelihood-ratio tests against nested baselines.
+  \item Estimated home-team odds boost at $\hat{\theta}\!\approx\!1.64\times$ (95\% CI $[1.54, 1.74]$); detected a significant secular decline in home advantage ($r\!=\!-0.64$) and a near-complete collapse during the 2020/21 COVID season ($\hat{\alpha}\!\approx\!-0.10$), implicating spectators causally.
 \end{itemize}
 
 \vspace{1pt}
