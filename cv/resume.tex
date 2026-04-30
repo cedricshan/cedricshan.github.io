@@ -2,9 +2,9 @@
 %  Yuan Shan — Resume (1 page)
 %  Compile with: tectonic resume.tex
 % ============================================================
-\documentclass[10.5pt,letterpaper]{article}
+\documentclass[10pt,letterpaper]{article}
 
-\usepackage[margin=0.5in,top=0.4in,bottom=0.4in]{geometry}
+\usepackage[margin=0.5in,top=0.4in,bottom=0.55in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -12,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{fancyhdr}
 
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -21,18 +22,34 @@
 \definecolor{muted}{HTML}{555560}
 \definecolor{soft}{HTML}{8A8A95}
 
-\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Yuan Shan -- Resume}, pdfauthor={Yuan Shan}}
 
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
+
+% ---------- footer (contact info pinned to bottom of page) ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \footrulewidth\hfill}}
+\fancyfoot[C]{%
+  \footnotesize\color{muted}%
+  \href{mailto:ys328@duke.edu}{ys328@duke.edu}%
+  \;\;$\cdot$\;\; (919) 697-2488%
+  \;\;$\cdot$\;\; \href{https://github.com/cedricshan}{github.com/cedricshan}%
+  \;\;$\cdot$\;\; \href{https://www.linkedin.com/in/yuanshan20011218/}{linkedin.com/in/yuanshan20011218}%
+}
+\setlength{\footskip}{20pt}
 
 % ---------- section style ----------
 \titleformat{\section}
   {\normalsize\bfseries\color{accent}}
   {}{0pt}{}
   [\vspace{-5pt}{\color{accent}\rule{\textwidth}{0.6pt}}]
-\titlespacing*{\section}{0pt}{6pt}{2pt}
+\titlespacing*{\section}{0pt}{5pt}{2pt}
 
 % ---------- list defaults ----------
 \setlist[itemize]{
@@ -47,85 +64,83 @@
 % \entry{Title}{Subtitle}{Right top}{Right bottom}
 \newcommand{\entry}[4]{%
   \noindent\textbf{\color{ink}#1}\hfill{\color{soft}\small #3}\\[0pt]%
-  \textit{\color{muted}#2}\hfill\textit{\color{soft}\small #4}%
+  {\itshape\color{muted}\small #2}\hfill\textit{\color{soft}\small #4}%
   \vspace{1pt}%
 }
 
-% ---------- compact entry: just title with right-aligned date ----------
-\newcommand{\eduentry}[4]{%
-  \noindent\textbf{\color{ink}#1}, {\color{muted}#2}\hfill{\color{soft}\small #3}\\[1pt]%
-  \textit{\color{muted}\small #4}%
-  \vspace{2pt}%
-}
-
 \begin{document}
+\linespread{0.93}\selectfont
 
 % ============== HEADER ==============
 \begin{center}
-  {\fontsize{22}{26}\selectfont\bfseries\color{ink} Yuan Shan}\\[2pt]
-  {\small\color{muted} M.S.\ in Statistical Science\, $\cdot$\, Duke University}\\[4pt]
-  {\footnotesize\color{muted}
-    \href{mailto:ys328@duke.edu}{ys328@duke.edu}
-    \;$\cdot$\; (919) 697-2488
-    \;$\cdot$\; \href{https://github.com/cedricshan}{github.com/cedricshan}
-    \;$\cdot$\; \href{https://www.linkedin.com/in/yuanshan20011218/}{linkedin.com/in/yuanshan20011218}
-    \;$\cdot$\; \href{https://cedricshan.github.io}{cedricshan.github.io}
+  {\fontsize{24}{28}\selectfont\bfseries\color{ink} Yuan Shan}\\[3pt]
+  {\small\color{muted}
+    M.S.\ in Statistical Science\, $\cdot$\, Duke University
+    \, $\cdot$\, \href{https://cedricshan.github.io}{cedricshan.github.io}
   }
 \end{center}
+
+\vspace{2pt}
 
 % ============== EDUCATION ==============
 \section{EDUCATION}
 
 \entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{Durham, NC, USA}\\
-\entry{Duke Kunshan University}{B.S.\ in Data Science (Interdisciplinary Studies)}{Jul 2020 -- Aug 2024}{Kunshan, China}
+\entry{Duke Kunshan University}{B.S.\ in Data Science (Interdisciplinary Studies in Data Science)}{Jul 2020 -- Aug 2024}{Kunshan, China}
 
 % ============== EXPERIENCE ==============
 \section{EXPERIENCE}
 
-\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing \,$\cdot$\, {\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
+\entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing, China \,$\cdot$\, \href{https://ieeexplore.ieee.org/document/11462654}{[Paper]} \,\href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]} \,$\cdot$\, {\color{accent}Accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
 \begin{itemize}
-  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining SFT with reinforcement learning (\textbf{GRPO}) under RLHF.
-  \item Constructed a public benchmark and multi-dimensional metrics (structure, content, pragmatics); curated $\sim$20k+ surveys from arXiv, bioRxiv, medRxiv with Chain-of-Thought annotations.
-  \item Optimized \textbf{Qwen3-8B} (full and LoRA); designed reward functions on structural distance and format compliance to align with human writing preferences.
-  \item Leveraged \textbf{vLLM} for inference and RL training acceleration, achieving \textbf{state-of-the-art} results over SurveyX, GPT-5 Nano, and DeepSeek-R1 on the benchmark.
+  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) with GRPO-style reinforcement learning under the RLHF paradigm to produce structurally coherent outlines.
+  \item Constructed a public benchmark and a multi-dimensional evaluation suite covering \textit{structure}, \textit{content}, and \textit{pragmatics}; curated $\sim$20{,}000 surveys from arXiv, bioRxiv, and medRxiv with Chain-of-Thought annotations to guide structured taxonomy reasoning.
+  \item Optimized \textbf{Qwen3-8B} end-to-end (full fine-tuning and LoRA) with custom reward functions on structural distance and format compliance, aligning generated outlines with human writing preferences.
+  \item Leveraged \textbf{vLLM} for inference and RL-training acceleration, achieving state-of-the-art results that surpassed SurveyX and outperformed GPT-5 Nano and DeepSeek-R1 across the benchmark.
 \end{itemize}
 
-\vspace{2pt}
-\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{Tencent Video}{Jun 2022 -- Aug 2022}{}
+\vspace{1pt}
+\entry{Beijing Academy of Artificial Intelligence (BAAI) \,\textemdash\, Research Intern}{Beijing, China}{Jun 2023 -- Oct 2023}{}
 \begin{itemize}
-  \item Independently owned an end-to-end ML project to surface high-potential video categories on Tencent Video, from data extraction and cleaning through model design and stakeholder reporting.
-  \item Engineered an \textbf{XGBoost}-based scoring model producing quantitative indicators of video-category potential; tuned via cross-validated hyperparameter search.
-  \item Built scalable pipelines on Tencent's internal task-scheduling platform; used \textbf{Spark} for distributed feature engineering on volumes up to \textbf{7.5M records}.
-  \item Wrote production SQL/Python; authored two reports informing Tencent Video's content-strategy decisions.
+  \item Contributed to BAAI's open-source 3D electron-microscopy processing toolchain, focusing on advanced neuron-segmentation methodologies including \textbf{PyTorch Connectomics (PyTC)} and \textbf{Local Shape Descriptors (LSD)}.
+  \item Built reproducible training pipelines for large-volume connectomics data, covering preprocessing, augmentation, and patch-based inference for cubic-micron electron-microscopy volumes.
+  \item Optimized segmentation models via systematic hyperparameter tuning combining \textbf{Grid Search} and \textbf{Bayesian Optimization}, materially improving downstream segmentation quality on internal benchmark volumes.
+\end{itemize}
+
+\vspace{1pt}
+\entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{Tencent Video, Shenzhen, China}{Jun 2022 -- Aug 2022}{}
+\begin{itemize}
+  \item Independently owned an end-to-end ML project to surface high-potential video categories on the Tencent Video platform, running the full pipeline from data extraction and cleaning through algorithm design and evaluation to final reporting for product stakeholders.
+  \item Engineered an \textbf{XGBoost}-based scoring model that produced quantitative indicators of video-category potential, surfacing under-served verticals with strong growth signal; tuned with cross-validated hyperparameter search.
+  \item Built scalable pipelines on Tencent's internal task-scheduling platform and deployed \textbf{Spark} for distributed feature engineering, keeping the workflow tractable on volumes of up to \textbf{7{,}500{,}000 records}.
+  \item Wrote production SQL and Python against internal data warehouses; synthesized findings into two reports that informed downstream content-strategy and operational decisions on Tencent Video.
 \end{itemize}
 
 % ============== PROJECTS ==============
 \section{SELECTED PROJECTS}
 
-\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,\textbar\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{HuggingFace Space}}{Apr 2026}{}
+\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,$\cdot$\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{[Live Demo]} \,\href{https://github.com/cedricshan/music-chat-recommender}{[GitHub]}}{Apr 2026}{}
 \begin{itemize}
-  \item Built a multi-turn LLM chatbot for personalized music recommendations with \textbf{Gradio} + \textbf{Groq Llama 3.3 70B}, integrating iTunes Search and YouTube Data APIs.
-  \item Deployed a public live demo on Hugging Face Spaces; designed conversation state, retrieval, and ranking logic end-to-end.
+  \item Built a multi-turn LLM chatbot for personalized music recommendations using \textbf{Gradio} and \textbf{Groq Llama 3.3 70B}, integrating the iTunes Search and YouTube Data APIs to surface metadata and playable links directly inside each conversation turn.
+  \item Designed conversation state, retrieval, and ranking logic end-to-end; deployed a publicly accessible live demo on Hugging Face Spaces that lets visitors chat with the assistant in the browser.
 \end{itemize}
 
-\vspace{2pt}
-\entry{Bradley--Terry Analysis of the English Premier League}{Sports Analytics \,\textbar\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{Slides}}{Mar 2026}{}
+\vspace{1pt}
+\entry{Bradley--Terry Analysis of the English Premier League}{Sports analytics \,$\cdot$\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{[Slides]} \,\href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{[GitHub]}}{Mar 2026}{}
 \begin{itemize}
-  \item Estimated latent team strengths across multiple Premier League seasons via the \textbf{Bradley--Terry} model and quantified home-field advantage over time.
-  \item Implemented model fitting, diagnostics, and visualization in Python/Jupyter; presented findings in a deck for an applied-statistics seminar.
+  \item Estimated latent team strengths across multiple Premier League seasons using the \textbf{Bradley--Terry} paired-comparison model and quantified the magnitude and trend of home-field advantage over time.
+  \item Implemented model fitting, diagnostic checks, and visualization in Python and Jupyter; presented the resulting findings in a deck delivered at an applied-statistics seminar.
 \end{itemize}
 
-% ============== SKILLS ==============
-\section{SKILLS}
-\noindent
-\textbf{\color{ink}Programming:}\, Python, R, SQL, JavaScript (D3.js), Bash. \quad
-\textbf{\color{ink}ML / LLM:}\, PyTorch, Transformers, vLLM, TRL, LoRA / PEFT, DeepSpeed, XGBoost.\\[1pt]
-\textbf{\color{ink}Data \& Infra:}\, Hadoop, Spark, Bayesian Opt., Causal Forests, DOE. \quad
-\textbf{\color{ink}Languages:}\, English (professional), Mandarin (native).
+\vspace{1pt}
+\entry{Football Transfer Market Visualization \,\textemdash\, Team Leader}{3-person STATS 401 team \,$\cdot$\, \href{https://transfer-market-vis.netlify.app/}{[Live Demo]} \,\href{https://github.com/cedricshan/Football-Transfer-Market-Visualization}{[GitHub]}}{Sep 2023 -- Oct 2023}{}
+\begin{itemize}
+  \item Led a 3-person team end-to-end as Team Leader: scoped the research questions, wrote the full Python data-cleaning pipeline, and designed an interactive \textbf{D3.js} dashboard from scratch that lets users drill down across clubs, seasons, and leagues.
+\end{itemize}
 
 % ============== HONORS ==============
 \section{HONORS}
-\noindent
-Dean's List with Distinction, Duke Kunshan University \,$\cdot$\, Finalist Prize, Mathematical Contest in Modeling (MCM) \,$\cdot$\, First Prize, National Olympiad in Informatics in Provinces (NOIP)
+\noindent\footnotesize
+Dean's List with Distinction (DKU) \,$\cdot$\, Finalist Prize, MCM/ICM \,$\cdot$\, First Prize, National Olympiad in Informatics in Provinces (NOIP)
 
 \end{document}
