@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -98,15 +99,17 @@ Large language models, reinforcement learning (RLHF, GRPO), self-evolving langua
 \section{PUBLICATIONS}
 
 \noindent
-\textbf{\color{ink}Yuan Shan} et al.
-\textit{``MEOW: A Metadata-Driven, End-to-End LLM Framework for Academic Survey Outline Generation.''}
+Z.~Ma$^{*}$, \textbf{\color{ink}Yuan Shan}$^{*}$, J.~Zhao, N.~Xu, L.~Wang.
+\textit{``MEOW: End-to-End Outline Writing for Automatic Academic Survey.''}
 \textbf{IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), 2026.}
 \;\href{https://ieeexplore.ieee.org/document/11462654}{[IEEE Xplore]}\;
+\href{https://arxiv.org/abs/2509.19370}{[arXiv]}\;
 \href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]}
+\hfill {\small\color{soft}\textit{$^{*}$ Equal contribution.}}
 
-\vspace{2pt}
-{\small\color{muted}\itshape
-The first metadata-driven, end-to-end LLM framework combining SFT and reinforcement learning (GRPO) under RLHF. Achieves SOTA performance over SurveyX, GPT-5 Nano, and DeepSeek-R1 on a curated multi-dimensional benchmark.}
+\vspace{4pt}
+{\small\color{muted}
+Reformulates survey outline writing as an end-to-end task that maps paper metadata to a hierarchical outline. Curates a high-quality dataset distilled from 2.82M arXiv, 252k bioRxiv, and 72k medRxiv records, with Chain-of-Thought reasoning chains generated via DeepSeek-R1. Trains an 8B reasoning model (Qwen3-8B) in two stages: SFT cold-start followed by GRPO with a Tree-Edit-Distance structural reward and a format-compliance reward. Establishes an LLM-as-a-Judge benchmark covering five criteria (Structure Locate / Detail, Content Exclusion / Depth, Pragmatics Concise) plus a structural-distance metric. \textbf{Meow-8B-SFT-GRPO} surpasses SurveyX (35.62 vs.\ 29.60 LLM-Judge total) and outperforms GPT-5 Nano, DeepSeek-R1, and Gemini 2.5 Flash-Lite on the SurveyX test set.}
 
 % ============== WORKING PAPERS ==============
 \section{WORKING PAPERS}
@@ -119,13 +122,13 @@ The first metadata-driven, end-to-end LLM framework combining SFT and reinforcem
 \section{INDUSTRY \& RESEARCH EXPERIENCE}
 
 \entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing, China}{May 2025 -- Oct 2025}{}\\[1pt]
-{\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026}
+{\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026 (co-first author)}
 \begin{itemize}
-  \item Designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) with reinforcement learning (GRPO) under the RLHF paradigm.
-  \item Constructed a public benchmark and multi-dimensional evaluation metrics covering structure, content, and pragmatics for outline-quality assessment.
-  \item Curated and distilled $\sim$20k+ surveys from arXiv, bioRxiv, and medRxiv; built a Chain-of-Thought (CoT) annotation layer to guide structured taxonomy reasoning and improve survey coherence.
-  \item Optimized \textbf{Qwen3-8B} (full and LoRA) end-to-end; designed reward functions on structural distance and format compliance to align generation with human writing preferences.
-  \item Leveraged \textbf{vLLM} to accelerate both inference and RL training, achieving state-of-the-art performance, surpassing baselines such as SurveyX and outperforming strong LLMs (GPT-5 Nano, DeepSeek-R1) on the benchmark.
+  \item Co-designed and built \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework that maps paper metadata to hierarchical academic survey outlines in a single inference step, replacing prior multi-agent template workflows that produce shallow, rigid outlines.
+  \item Built the data pipeline that curated and filtered \textbf{2.82M arXiv}, \textbf{252k bioRxiv}, and \textbf{72k medRxiv} records into a high-quality survey dataset; enriched references via vector retrieval (\texttt{all-MiniLM-L6-v2}) and distilled Chain-of-Thought reasoning chains using \textbf{DeepSeek-R1} to bridge metadata input and outline output.
+  \item Trained \textbf{Qwen3-8B} in two stages: SFT cold-start on the CoT-annotated corpus, followed by Group Relative Policy Optimization (\textbf{GRPO}) with a Tree-Edit-Distance \textit{structural similarity reward} and a binary \textit{format-compliance reward}, weighted by $\lambda$.
+  \item Established an LLM-as-a-Judge evaluation framework covering five criteria (Structure Locate / Detail, Content Exclusion / Depth, Pragmatics Concise) plus a structural-distance metric; released the benchmark, training corpus, and evaluation scripts publicly on Hugging Face and GitHub.
+  \item Used \textbf{vLLM} to accelerate both inference and RL training; \textbf{Meow-8B-SFT-GRPO} surpassed SurveyX (35.62 vs.\ 29.60 LLM-Judge total) and beat GPT-5 Nano, DeepSeek-R1, and Gemini 2.5 Flash-Lite on the SurveyX test set.
 \end{itemize}
 
 \vspace{4pt}
@@ -157,23 +160,33 @@ The first metadata-driven, end-to-end LLM framework combining SFT and reinforcem
 % ============== PROJECTS ==============
 \section{PROJECTS}
 
-\entry{Music Chat Recommender}{Multi-turn LLM chatbot \,\textbar\, \href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{Live Demo} \,\textbar\, \href{https://github.com/cedricshan/music-chat-recommender}{GitHub}}{Apr 2026}{}
+\entry{Music Chat Recommender \,\textemdash\, LLM-mediated multi-turn recommender}{\href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{Live Demo} \,\textbar\, \href{https://github.com/cedricshan/music-chat-recommender}{GitHub}}{Apr 2026}{}
 \begin{itemize}
-  \item Built a multi-turn LLM chatbot for personalized music recommendations using Gradio and \textbf{Groq Llama 3.3 70B}, integrating iTunes Search and YouTube Data APIs.
-  \item Deployed a publicly available live demo on Hugging Face Spaces; designed conversation state, retrieval, and ranking logic end-to-end.
+  \item Built a chat-first music recommender that parses free-form English requests (e.g.\ ``sad songs for a rainy evening, but no Coldplay''), runs live searches, and returns an ordered short-list with embedded YouTube playback.
+  \item Designed a \textbf{two-call LLM architecture}: an intent-parsing call extracts a Pydantic-typed \texttt{SearchQuery} (mood, genres, exclusions, year range, control flags) from the latest user turn plus a serialized memory; a rerank-and-reply call selects from the candidate pool and writes the human-facing reply, with both outputs validated against Pydantic schemas to make malformed LLM outputs unrecoverable failures rather than crashes.
+  \item Implemented a \textbf{provider abstraction} over \textbf{Groq Llama 3.3 70B} (primary, JSON mode) and \textbf{Gemini 2.5 Flash-Lite} (fallback) to absorb mid-project free-tier policy changes from both Spotify (API deprecation, Nov 2024) and Google.
+  \item Pivoted the music backend from Spotify to the keyless \textbf{iTunes Search API} after the Spotify Web API was restricted; reconstructed similarity reasoning from search alone via a fan-out strategy that issues 1--6 facet-specific queries per intent.
+  \item Built per-session \texttt{ConversationState} (likes, dislikes, must-exclude artists, history) so follow-ups like ``stop recommending Drake'' and ``more diverse next time'' work without restating context; orchestrated everything in a single Gradio app deployed publicly on Hugging Face Spaces.
 \end{itemize}
 
 \vspace{4pt}
-\entry{Physical Activity \& Mental Distress: Age-Dependent Heterogeneity}{Causal ML on BRFSS 2015--2024 \,\textbar\, \href{https://github.com/cedricshan/pa-fmd-hte}{GitHub}}{Apr 2026}{}
+\entry{Age-Dependent Heterogeneity in the PA -- Mental-Distress Association}{Causal ML on BRFSS 2015--2024 \,\textbar\, \href{https://github.com/cedricshan/pa-fmd-hte}{GitHub}}{Apr 2026}{}
 \begin{itemize}
-  \item Causal machine-learning analysis of physical activity's effect on mental distress across $\sim$1.9 million U.S. adults, uncovering age-dependent treatment heterogeneity.
-  \item Used Causal Forests to estimate heterogeneous treatment effects and validated robustness across BRFSS waves.
+  \item Pooled \textbf{ten consecutive annual waves} of the U.S.\ Behavioral Risk Factor Surveillance System (BRFSS, 2015--2024; \textbf{n $=$ 3{,}242{,}218} adults after complete-case filtering) to test whether the protective association between leisure-time physical activity (PA) and frequent mental distress (FMD) varies systematically by age.
+  \item Fit \textbf{survey-weighted logistic regression} with raked sampling weights, sandwich SEs clustered on PSU, and a formal PA $\times$ Age likelihood-ratio test for effect modification; ran age-stratified models within each of six age groups and a three-way PA $\times$ Age $\times$ Year interaction for temporal change.
+  \item Independently estimated heterogeneous treatment effects via \textbf{Causal Forest under Double Machine Learning} (\texttt{CausalForestDML} in EconML), with HistGradientBoosting nuisance models and 2-fold cross-fitting, recovering the conditional ATE as a function of covariates without pre-specifying subgroups.
+  \item \textbf{Found a striking, monotonic age gradient}: PA odds ratio for FMD ranges from \textbf{0.89} (ages 18--24) to \textbf{0.50} (ages 55--64); the Causal Forest independently identifies \textbf{age as the dominant heterogeneity driver} (feature importance $=$ 0.39, $2.5\times$ the next predictor).
+  \item \textbf{Documented a novel temporal finding}: the already-weak protective effect among 18--24-year-olds has been eroding over the decade, reaching the null in both \textbf{2018 and 2024} and paralleling the deepening youth mental-health crisis.
+  \item Validated robustness with \textbf{E-values} for unmeasured confounding, propensity-score overlap diagnostics, a placebo test on a non-causal outcome, and a conditional-imputation sensitivity analysis on missing income.
 \end{itemize}
 
 \vspace{4pt}
-\entry{Optimizing Turbine Blade Design}{Design of Experiments + Surrogate Models \,\textbar\, \href{https://github.com/cedricshan/Optimizing-Turbine-Blade-Design}{GitHub}}{Apr 2026}{}
+\entry{Optimizing Turbine Blade Design under Operational Uncertainty}{Robust DOE + Surrogate Modeling \,\textbar\, \href{https://github.com/cedricshan/Optimizing-Turbine-Blade-Design}{GitHub}}{Apr 2026}{}
 \begin{itemize}
-  \item Design-of-experiments and surrogate-model optimization for turbine blade geometry, balancing aerodynamic efficiency against manufacturing constraints.
+  \item Tackled a \textbf{constrained robust optimization} problem on a finite-element gas-turbine-blade simulator: minimize expected maximum von Mises stress subject to a strict displacement feasibility constraint ($d < 1.3\times10^{-3}$\,m), under uncontrollable perturbations of cooling temperature ($\pm 2^{\circ}\text{C}$) and pressure load ($\pm 10^4$\,Pa), all within a hard \textbf{300-evaluation simulation budget}.
+  \item Designed a \textbf{four-phase pipeline}: (i) 100-point maximin Latin Hypercube Design over the 6-D unit hypercube; (ii) Gaussian Process surrogate with \textbf{Mat\'ern-5/2 kernel and ARD length-scales}, achieving \textbf{10-fold CV $R^{2}>0.994$} on both stress and displacement; (iii) 150 sequential runs driven by an \textbf{Expected Improvement with Constraints} acquisition, augmented by a Gaussian proximity penalty for batch diversification; (iv) 27-run robust grid validation ($3\times3$ perturbation grid on 3 candidates) plus 23 random validation runs.
+  \item Achieved a \textbf{41\% reduction} in maximum stress relative to the LHD best, with the recommended design satisfying displacement feasibility on \textbf{100\%} of all tested perturbations and a \textbf{45\% safety margin} below the failure threshold; ARD length-scale analysis isolated \textbf{CTE} (Coefficient of Thermal Expansion) as the dominant design factor.
+  \item Built a three-stage \textbf{SLURM pipeline} on the Duke Computing Cluster (input generation $\rightarrow$ array-job parallel simulation with \texttt{--array=1-N\%40} $\rightarrow$ chained result merging via \texttt{--dependency=afterok}); 40-way parallelism delivered a \textbf{$\sim$33$\times$ wall-clock speedup} (4 min vs.\ 2.2 h for a 100-run batch), enabling rapid sequential iteration.
 \end{itemize}
 
 \vspace{4pt}
@@ -183,10 +196,12 @@ The first metadata-driven, end-to-end LLM framework combining SFT and reinforcem
 \end{itemize}
 
 \vspace{4pt}
-\entry{Bradley--Terry Analysis of the English Premier League}{Sports Analytics \,\textbar\, \href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{Slides} \,\textbar\, \href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{GitHub}}{Mar 2026}{}
+\entry{Bradley--Terry Analysis of the English Premier League}{\href{https://docs.google.com/presentation/d/1mncW87F79ezDnqah3qGSjqWAFXMQzGMNqfB2MTYl6jM/edit}{Slides} \,\textbar\, \href{https://github.com/cedricshan/Bradley-Terry-Model-Analysis-of-the-English-Premier-League}{GitHub}}{Mar 2026}{}
 \begin{itemize}
-  \item Estimated latent team strengths across multiple Premier League seasons via the Bradley--Terry model and quantified the magnitude of home-field advantage over time.
-  \item Implemented model fitting, diagnostic checks, and visualization in Python/Jupyter; presented findings in a deck for an applied-statistics seminar.
+  \item Applied the \textbf{Bradley--Terry} paired-comparison framework to \textbf{7{,}860} EPL match results across 21 seasons (2005/06--2025/26, 44 clubs) to estimate relative team strengths and quantify home advantage; reformulated the base BT model as logistic regression to enable standard MLE inference and asymptotic Wald / likelihood-ratio tests.
+  \item Extended the analysis with the \textbf{Davidson} formulation to absorb the 24\% of matches ending in draws, plus \textbf{season-specific} and \textbf{team-specific} home-advantage intercepts; validated each extension via nested LRT and AIC comparison.
+  \item Estimated the home-team odds boost at $\hat{\theta}\!\approx\!1.64\times$ ($p\!<\!10^{-15}$ under all model variants); team-strength estimates from BT and Davidson agreed at $r\!=\!0.990$, confirming robustness.
+  \item Detected a \textbf{significant secular decline} in home advantage over the study window and a \textbf{near-complete collapse} during the 2020/21 spectator-less COVID season ($\hat{\alpha}\!\approx\!-0.10$) --- direct empirical support for the causal role of crowds.
 \end{itemize}
 
 \vspace{4pt}
