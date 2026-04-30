@@ -470,17 +470,18 @@ body::before {
 .hero-portrait {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   perspective: 1200px;
 }
 .portrait-stack {
+  position: relative;
   width: 100%;
   max-width: 280px;
-  margin-left: auto;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  align-items: stretch;
+  gap: 1.25rem;
 }
 .portrait-frame {
   position: relative;
@@ -552,26 +553,25 @@ body::before {
 .portrait-corners span:nth-child(4) { bottom: -7px; right: -7px;   border-left:  0; border-top:    0; }
 .portrait-frame:hover .portrait-corners span { width: 26px; height: 26px; }
 
-/* small meta card — sits cleanly beneath the portrait */
+/* small meta card – sibling of portrait, sits clearly below */
 .portrait-meta {
-  align-self: flex-start;
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-strong);
   border-radius: 10px;
-  padding: .7rem .9rem;
+  padding: .75rem .9rem;
   display: grid;
   gap: .25rem;
   font-family: var(--font-mono);
   font-size: .68rem;
   box-shadow: var(--shadow-md);
-  transform: rotate(-1.5deg);
-  margin-left: -10px;
-  position: relative;
-  z-index: 2;
+  transform: rotate(-1.2deg);
+  align-self: flex-start;
+  margin-left: -8px;
 }
 .pm-row { display: grid; grid-template-columns: 2.8rem 1fr; gap: .75rem; align-items: baseline; }
 .pm-key { color: var(--accent); letter-spacing: .05em; text-transform: uppercase; font-size: .6rem; }
-.pm-val { color: var(--text); white-space: nowrap; }
+.pm-val { color: var(--text); white-space: nowrap; font-size: .72rem; }
 
 /* scroll hint */
 .scroll-hint {
@@ -1289,10 +1289,10 @@ body::before {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-  .hero-portrait { order: -1; }
-  .portrait-stack { max-width: 240px; margin: 0 auto; align-items: center; }
-  .portrait-meta { font-size: .64rem; align-self: center; margin-left: 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-portrait { order: -1; justify-content: center; }
+  .portrait-stack { max-width: 240px; align-items: center; }
+  .portrait-meta { font-size: .64rem; margin-left: 0; }
 }
 
 @media (max-width: 880px) {
@@ -1342,5 +1342,5 @@ body::before {
   .contact-meta { text-align: center; }
   .contact-meta li { align-items: center; }
   .portrait-stack { max-width: 220px; }
-  .portrait-meta { transform: rotate(-1.5deg); }
+  .portrait-meta { transform: rotate(-1.2deg); }
 }
