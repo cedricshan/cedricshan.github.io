@@ -941,9 +941,11 @@ body::before {
 .pill-stats  { background: rgba(120,160,220,.13); color: #94b8e6; }
 .pill-optim  { background: rgba(110,200,150,.13); color: #8de0b3; }
 .pill-viz    { background: rgba(183,106,161,.14); color: var(--plum); }
+.pill-sports { background: rgba(70,180,200,.13); color: #6ed4e0; }
 [data-theme="light"] .pill-stats  { background: rgba(60,90,150,.10);  color: #4670a8; }
 [data-theme="light"] .pill-optim  { background: rgba(60,130,90,.10);  color: #3a8a5e; }
 [data-theme="light"] .pill-viz    { background: rgba(140,80,160,.10); color: #8757aa; }
+[data-theme="light"] .pill-sports { background: rgba(40,130,160,.10); color: #2d7894; }
 
 .project-title {
   font-family: var(--font-display);
