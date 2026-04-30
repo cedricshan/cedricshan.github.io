@@ -6,6 +6,10 @@ node_modules/
 
 # old resume source not used by the site
 YuanSHAN-resume-012226.docx
+YuanSHAN-resume-042126.pdf
+
+# private analysis reports referenced when writing the resume
+EPL_BradleyTerry_Report.pdf
 
 # LaTeX build artifacts
 cv/*.aux
