@@ -160,6 +160,15 @@ Reformulates survey outline writing as an end-to-end task that maps paper metada
 % ============== PROJECTS ==============
 \section{PROJECTS}
 
+\entry{World Cup 2026 \,\textemdash\, Commercial Intelligence Dashboard}{\href{https://019fc17e-1d8b-e115-70c7-734a309d5956.share.connect.posit.cloud/}{Live Demo}}{Aug 2026}{}
+\begin{itemize}
+  \item Built an end-to-end \textbf{R Shiny} data product on the first 48-team World Cup: an ETL pipeline reconstructs a \textbf{minute-by-minute scoreline} for all \textbf{104 matches} from a \textbf{49{,}520-match} international record, with in-pipeline assertions on round structure and per-match reconciliation of goal tallies against published scorelines that halt the build on any mismatch rather than passing silently.
+  \item Designed three original measures for commercial questions: a \textbf{Clutch Index} weighting every goal by round, timing and scoreline situation to value goals rather than count them; a \textbf{Drama Score} with five viewer-adjustable weights for broadcast scheduling, shipped with a sensitivity analysis over 150 alternative weightings; and \textbf{$k$-means style archetypes} over six dimensions grouping all 48 teams into three playing profiles.
+  \item \textbf{Key finding --- volume and value separate at the very top}: the Golden Boot winner scored 10 goals but indexes \textbf{89.5}, while a 7-goal player tops the value ranking on 5 knockout goals. Separately identified that the champions ranked only mid-table for goals scored yet conceded a tournament-low \textbf{0.12} per match --- winning on defence, not firepower.
+  \item Engineered for maintenance: modular Shiny architecture (one module per view) with the analytical layer written as pure functions carrying no reactive dependencies, so it is testable outside the running app; \textbf{114 unit tests} covering metric computation and data integrity; deployed publicly on Posit Connect Cloud.
+\end{itemize}
+
+\vspace{4pt}
 \entry{Music Chat Recommender \,\textemdash\, LLM-mediated multi-turn recommender}{\href{https://huggingface.co/spaces/Cedric1218/music-chat-recommender}{Live Demo} \,\textbar\, \href{https://github.com/cedricshan/music-chat-recommender}{GitHub}}{Apr 2026}{}
 \begin{itemize}
   \item Built a chat-first music recommender that parses free-form English requests (e.g.\ ``sad songs for a rainy evening, but no Coldplay''), runs live searches, and returns an ordered short-list with embedded YouTube playback.
