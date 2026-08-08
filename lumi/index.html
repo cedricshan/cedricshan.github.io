@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumi — Proactive Hazard Alerts for Blind and Low-Vision Walkers</title>
+<meta name="description" content="Smart glasses paired with an on-device assistant that speaks concise, timely hazard alerts for blind and low-vision walkers.">
+<style>
+  :root{
+    --bg:#fffdf8; --fg:#1c1917; --muted:#6b6459; --card:#ffffff; --line:#eae4d8;
+    --accent:#b45309; --accent-soft:#fef3c7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141210; --fg:#f1ede6; --muted:#a49c8f; --card:#1e1b17; --line:#2e2a24;
+           --accent:#f59e0b; --accent-soft:#3a2c10; }
+  }
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{text-align:center;padding:64px 0 40px}
+  header img.logo{width:96px;height:auto}
+  h1{font-size:2.6rem;letter-spacing:-.02em;margin:10px 0 6px}
+  .tagline{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0 auto}
+  .btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:9px 18px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.95rem;border:1px solid var(--line);color:var(--fg)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  section{padding:40px 0;border-top:1px solid var(--line)}
+  h2{font-size:1.6rem;letter-spacing:-.01em;margin-bottom:14px}
+  h3{font-size:1.1rem;margin:26px 0 8px}
+  p.lead{color:var(--muted)}
+  .modes{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+  .mode{flex:1 1 260px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .mode b{color:var(--accent)}
+  video{width:100%;border-radius:12px;border:1px solid var(--line);background:#000;display:block}
+  .clip{margin-top:30px}
+  .cap{font-size:.85rem;color:var(--muted);margin-top:6px}
+  .team{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px;font-weight:600}
+  .team span sup{color:var(--accent)}
+  .inst{color:var(--muted);margin-top:6px}
+  .logos{display:flex;gap:28px;align-items:center;margin-top:18px}
+  .logos img{height:52px;width:auto}
+  @media (prefers-color-scheme: dark){ .logos img{background:#fff;border-radius:8px;padding:5px} }
+  .advisor{background:var(--accent-soft);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:22px}
+  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--muted);font-size:.9rem;text-align:center}
+  .note{font-size:.9rem;color:var(--muted);margin-top:14px}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <img class="logo" src="web/lumi-logo.png" alt="Lumi firefly logo">
+  <h1>Lumi</h1>
+  <p class="tagline">Proactive hazard alerts for blind and low-vision walkers —
+  smart glasses paired with a compact on-device vision-language model.</p>
+  <div class="btns">
+    <a class="btn primary" href="#demos">▶ Watch the demos</a>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>What is Lumi?</h2>
+  <p class="lead">Lumi senses the environment through Mentra Live smart glasses and speaks
+  concise guidance. A long-press on the glasses toggles between two modes:</p>
+  <div class="modes">
+    <div class="mode"><b>Hazard mode</b><br>Continuous obstacle warnings that run
+    on the phone in real time — Lumi decides <i>when</i> to speak and keeps each
+    alert to one short spoken sentence.</div>
+    <div class="mode"><b>Command mode</b><br>On-demand <i>"describe / read / find X"</i>
+    answered by a cloud VLM, one long-press away.</div>
+  </div>
+</section>
+
+<section class="wrap" id="demos">
+  <h2>Demos</h2>
+  <p class="lead">Three real walking clips with Lumi's spoken alerts.</p>
+
+  <div class="clip">
+    <h3>Clip 1 — Office &amp; lounge (indoor)</h3>
+    <video controls preload="metadata" src="web/demo1_ours.mp4"></video>
+    <div class="cap">Lumi — spoken alerts on the full-frame clip</div>
+  </div>
+
+  <div class="clip">
+    <h3>Clip 2 — Campus sidewalk (outdoor)</h3>
+    <video controls preload="metadata" src="web/demo2_ours.mp4"></video>
+    <div class="cap">Lumi — spoken alerts on the full-frame clip</div>
+  </div>
+
+  <div class="clip">
+    <h3>Clip 3 — Corridor</h3>
+    <video controls preload="metadata" src="web/demo3_ours.mp4"></video>
+    <div class="cap">Lumi — spoken alerts on the full-frame clip</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Team</h2>
+  <div class="team">
+    <span>Yuan Shan<sup>1</sup></span>
+    <span>Mohammed Alabbas<sup>2</sup></span>
+    <span>Renzo Larrea<sup>1</sup></span>
+    <span>Ziv Aharoni<sup>1</sup></span>
+    <span>Henry D. Pfister<sup>1</sup></span>
+  </div>
+  <div class="inst"><sup>1</sup> Duke University &nbsp;·&nbsp; <sup>2</sup> University of Illinois Urbana-Champaign</div>
+  <div class="logos">
+    <img src="web/duke.png" alt="Duke University">
+    <img src="web/uiuc.png" alt="University of Illinois Urbana-Champaign">
+  </div>
+  <div class="advisor">We are grateful to our advisor <b>Omar Mohiuddin, MPH, MS, OTR/L</b>
+  (Duke Eye Center — Low Vision Rehabilitation) for guidance on what blind and low-vision
+  users actually need.</div>
+  <p class="note">Built with support from Mentra Live and the Duke Compute Cluster.</p>
+</section>
+
+<footer>
+  <div class="wrap">
+    Lumi is a research prototype — not a medical device and not a replacement for a cane,
+    guide dog, or O&amp;M training.<br>
+    Contact: <a href="https://cedricshan.github.io/" style="color:inherit">Yuan Shan</a> · Duke University
+  </div>
+</footer>
+
+</body>
+</html>
