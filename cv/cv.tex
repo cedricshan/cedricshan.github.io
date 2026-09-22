@@ -85,7 +85,7 @@
 % ============== EDUCATION ==============
 \section{EDUCATION}
 
-\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{Durham, NC, USA}
+\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- Dec 2026 (expected)}{Durham, NC, USA}
 \\[3pt]
 \entry{Duke University}{B.S.\ in Interdisciplinary Studies --- Data Science}{Jul 2020 -- Aug 2024}{Durham, NC, USA}
 \\[3pt]
@@ -94,7 +94,7 @@
 % ============== RESEARCH INTERESTS ==============
 \section{RESEARCH INTERESTS}
 \noindent\color{muted}
-Large language models, reinforcement learning (RLHF, GRPO), self-evolving language model agents, statistical modeling, causal machine learning, design of experiments.
+Post-training and evaluation of large language and vision-language models (SFT, distillation, GRPO); self-evolving reinforcement learning for LLM agents; efficient models for edge devices; AI for accessibility; statistical modeling and causal machine learning.
 
 % ============== PUBLICATIONS ==============
 \section{PUBLICATIONS}
@@ -112,16 +112,41 @@ Z.~Ma$^{*}$, \textbf{\color{ink}Yuan Shan}$^{*}$, J.~Zhao, N.~Xu, L.~Wang.
 {\small\color{muted}
 Reformulates survey outline writing as an end-to-end task that maps paper metadata to a hierarchical outline. Curates a high-quality dataset distilled from 2.82M arXiv, 252k bioRxiv, and 72k medRxiv records, with Chain-of-Thought reasoning chains generated via DeepSeek-R1. Trains an 8B reasoning model (Qwen3-8B) in two stages: SFT cold-start followed by GRPO with a Tree-Edit-Distance structural reward and a format-compliance reward. Establishes an LLM-as-a-Judge benchmark covering five criteria (Structure Locate / Detail, Content Exclusion / Depth, Pragmatics Concise) plus a structural-distance metric. \textbf{Meow-8B-SFT-GRPO} surpasses SurveyX (35.62 vs.\ 29.60 LLM-Judge total) and outperforms GPT-5 Nano, DeepSeek-R1, and Gemini 2.5 Flash-Lite on the SurveyX test set.}
 
+% ============== UNDER REVIEW ==============
+\section{MANUSCRIPTS UNDER REVIEW}
+
+\noindent
+\textbf{\color{ink}Yuan Shan}, Z.~Aharoni, M.~Alabbas, R.~Larrea, H.~D.~Pfister.
+\textit{``Knowing What to Say and When: Proactive Hazard Alerts for Visually Impaired Pedestrians with a Lightweight Vision-Language Model.''}
+\textbf{Under review, 2026.}
+\;\href{https://cedricshan.github.io/streetwise/}{[Showcase]}
+
+\vspace{4pt}
+{\small\color{muted}
+StreetWise offloads geometry, motion and timing to a perception front-end and an utterance gate, so a FastVLM-0.5B generator composes each spoken alert from one frame plus perception text. Trained by LoRA SFT of a 7B teacher, sequence-level distillation, and Dr.~GRPO with a programmatic reward. On StreetWise-Bench (300 clips, VLM judge, 1--4 scale) the 0.5B model scores 3.00 vs.\ 3.29 for GPT-5.6-terra and above every open-weight model evaluated (up to 38B), with 59\,ms time to first token. Also introduces StreetWise-20K, 20k relabeled egocentric walking clips.}
+
 % ============== WORKING PAPERS ==============
 \section{WORKING PAPERS}
 
 \noindent
-\textbf{\color{ink}Self-Evolving LLM Agent.} \textit{In preparation.}\\[2pt]
+\textbf{\color{ink}Self-Evolving Reinforcement Learning for LLM Agents.} \textit{In preparation.}\\[2pt]
 {\small\color{muted}\itshape Research project on reinforcement-learning-driven self-evolution for large language model agents.}
 
 % ============== EXPERIENCE ==============
 \section{INDUSTRY \& RESEARCH EXPERIENCE}
 
+\entry{Duke University, Pfister Group \,\textemdash\, Graduate Research Assistant}{Durham, NC, USA}{May 2026 -- Present}{}\\[1pt]
+{\small\color{accent}\itshape First-author manuscript under review (2026)}
+\begin{itemize}
+  \item First-authored \textbf{StreetWise}, a two-tier vision-language system that gives blind and low-vision pedestrians proactive spoken hazard alerts from smart-glasses video.
+  \item Designed the training pipeline: LoRA SFT of a \textbf{FastVLM-7B} teacher, sequence-level distillation into \textbf{FastVLM-0.5B}, then \textbf{Dr.~GRPO} with a programmatic five-term reward (hazard coverage, action, false-clear, brevity, grounding).
+  \item Built \textbf{StreetWise-20K} by relabeling 20k clips from WAD, WRD and EgoBlind into structured alerts (hazard, clock direction, motion, scene, danger level) with a single frontier-VLM pipeline.
+  \item Built \textbf{StreetWise-Bench} (300 clips): a VLM-judge rubric over actionability, sufficiency, conciseness and honesty plus time-to-first-token latency; reproduced the WAD GPT-Score and VIABench protocols for external comparison.
+  \item Result: the 0.5B generator scores \textbf{3.00} vs.\ \textbf{3.29} for GPT-5.6-terra and above every open-weight model evaluated (up to 38B), at \textbf{59\,ms} time to first token; first among streaming systems on VIABench MPS.
+  \item Earlier in the project (Duke Data+, May--Jul 2026): shipped \textbf{Lumi}, an on-device prototype on Mentra Live glasses and iPhone with a YOLO-World tracker and a distilled 0.5B VLM.
+\end{itemize}
+
+\vspace{4pt}
 \entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{Beijing, China}{May 2025 -- Oct 2025}{}\\[1pt]
 {\small\color{accent}\itshape Work accepted at IEEE ICASSP 2026 (co-first author)}
 \begin{itemize}

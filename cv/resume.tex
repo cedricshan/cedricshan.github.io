@@ -87,12 +87,19 @@
 % ============== EDUCATION ==============
 \section{EDUCATION}
 
-\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- May 2026}{}
+\entry{Duke University}{M.S.\ in Statistical Science}{Aug 2024 -- Dec 2026 (expected)}{}
 \entry{Duke University}{B.S.\ in Data Science}{Jul 2020 -- Aug 2024}{}
 
 % ============== EXPERIENCE ==============
 \section{EXPERIENCE}
 
+\entry{Duke University, Pfister Group \,\textemdash\, Graduate Research Assistant}{\href{https://cedricshan.github.io/streetwise/}{[Showcase]} \,$\cdot$\, {\color{accent}First-author manuscript under review (2026)}}{May 2026 -- Present}{}
+\begin{itemize}
+  \item First-authored \textbf{StreetWise}, a two-tier vision-language system that gives blind and low-vision pedestrians proactive spoken hazard alerts from smart-glasses video; the 0.5B generator reaches 91\% of GPT-5.6-terra's judged alert quality and surpasses every open-weight VLM evaluated (up to 38B) at \textbf{59\,ms} time to first token.
+  \item Designed the training pipeline: LoRA SFT of a \textbf{FastVLM-7B} teacher, sequence-level distillation into \textbf{FastVLM-0.5B}, then \textbf{Dr.~GRPO} with a programmatic reward.
+  \item Built \textbf{StreetWise-20K} (20k relabeled egocentric clips) and \textbf{StreetWise-Bench} (300 clips, VLM-judge rubric plus latency); reproduced the WAD GPT-Score and VIABench protocols.
+\end{itemize}
+\vspace{1pt}
 \entry{Wenge Tech \,\textemdash\, LLM Algorithm Engineer Intern}{\href{https://ieeexplore.ieee.org/document/11462654}{[Paper]} \,\href{https://github.com/cedricshan/Survey-Outline-Evaluation-Benckmark}{[Code \& Benchmark]} \,$\cdot$\, {\color{accent}Accepted at IEEE ICASSP 2026}}{May 2025 -- Oct 2025}{}
 \begin{itemize}
   \item Developed \textbf{MEOW}, the first metadata-driven, end-to-end LLM framework for academic survey outline generation, combining supervised fine-tuning (SFT) and reinforcement learning (GRPO) within the RLHF paradigm.
@@ -113,10 +120,8 @@
 \entry{Tencent \,\textemdash\, Machine Learning Engineering Intern}{}{Jun 2022 -- Aug 2022}{}
 \begin{itemize}
   \item Independently undertook a project to identify potential video categories on the Tencent Video platform, managing the entire process from data extraction, cleaning, and algorithm implementation through to the reporting of results.
-  \item Established pipelines for task scheduling and dependency management on the internal task-scheduling platform.
   \item Developed machine learning models based on \textbf{XGBoost} to construct quantitative indicators for video potential; used SQL and Python for data retrieval and ML model implementation.
   \item Employed \textbf{Spark} for distributed computing to enhance pipeline efficiency with data volumes up to \textbf{7,500,000 records}.
-  \item Authored two project reports providing insights for Tencent Video operations.
 \end{itemize}
 
 % ============== PROJECTS ==============
@@ -133,15 +138,8 @@
 \begin{itemize}
   \item Fit a \textbf{Bradley--Terry} paired-comparison model --- reformulated as logistic regression to enable standard MLE inference --- to 21 seasons of English Premier League match data (2005/06--2025/26).
   \item Extended the base model with the \textbf{Davidson} formulation for draws plus season-specific and team-specific home-advantage parameters; validated each extension via Wald and likelihood-ratio tests against nested baselines.
-  \item Found home-field advantage highly significant overall, with a clear secular decline across the study period and a near-complete collapse during the 2020/21 COVID season --- direct empirical support for the causal role of spectators.
 \end{itemize}
 
-\vspace{1pt}
-\entry{Football Transfer Market Visualization}{\href{https://transfer-market-vis.netlify.app/}{[Live Demo]} \,\href{https://github.com/cedricshan/Football-Transfer-Market-Visualization}{[GitHub]}}{Oct 2023}{}
-\begin{itemize}
-  \item Aimed to provide insights into the evolution trends and key influencing factors of the global football transfer market via Python-based data cleaning and processing of multi-season transfer data.
-  \item Built interactive data visualizations and UI design in \textbf{D3.js}; final dashboard deployed publicly online.
-\end{itemize}
 
 % ============== HONORS ==============
 \section{HONORS}
